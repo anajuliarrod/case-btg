@@ -1,0 +1,440 @@
+{
+  "documento": {
+    "arquivo": "07_telecom_norte_jcp_SCAN.pdf",
+    "sha256": "cf4af08dd23f507ae72b852d86827bbee6c3fe2d0e31f96e70bc74ea4238c45f",
+    "paginas": 1,
+    "fonte": "imagem_escaneada"
+  },
+  "status": "revisao_humana",
+  "resumo_operador": "JCP TLNR4. Crédito em dinheiro: R$ 0,1124300000 bruto por ação, R$ 0,0927547500 líquido após IRRF de 17,5%. Data com 22/06/2026, ex 23/06/2026, pagamento/crédito 21/08/2026. Requer revisão humana: 1 item(ns).",
+  "identificacao": {
+    "emissor": {
+      "valor": "Telecom Norte Participações S.A.",
+      "unidade": null,
+      "status": "extraido",
+      "confianca": "alta",
+      "motivos": [
+        "lido de imagem (PDF sem camada de texto): trecho não verificável",
+        "confirmado por golden.identificacao"
+      ],
+      "evidencia": {
+        "trecho": "TELECOM NORTE PARTICIPAÇÕES S.A.",
+        "pagina": 1,
+        "linha": null,
+        "verificada": null
+      }
+    },
+    "cnpj": {
+      "valor": "33.222.111/0001-44",
+      "unidade": null,
+      "status": "extraido",
+      "confianca": "alta",
+      "motivos": [
+        "lido de imagem (PDF sem camada de texto): trecho não verificável",
+        "confirmado por golden.identificacao"
+      ],
+      "evidencia": {
+        "trecho": "CNPJ/ME nº 33.222.111/0001-44",
+        "pagina": 1,
+        "linha": null,
+        "verificada": null
+      }
+    },
+    "isin": {
+      "valor": "BRTLNRACNPR2",
+      "unidade": null,
+      "status": "extraido",
+      "confianca": "alta",
+      "motivos": [
+        "lido de imagem (PDF sem camada de texto): trecho não verificável",
+        "confirmado por golden.identificacao"
+      ],
+      "evidencia": {
+        "trecho": "ISIN BRTLNRACNPR2",
+        "pagina": 1,
+        "linha": null,
+        "verificada": null
+      }
+    },
+    "ticker": {
+      "valor": "TLNR4",
+      "unidade": null,
+      "status": "extraido",
+      "confianca": "alta",
+      "motivos": [
+        "lido de imagem (PDF sem camada de texto): trecho não verificável",
+        "confirmado por golden.identificacao"
+      ],
+      "evidencia": {
+        "trecho": "Código de negociação .......... TLNR4",
+        "pagina": 1,
+        "linha": null,
+        "verificada": null
+      }
+    },
+    "classe_acao": {
+      "valor": "PN",
+      "unidade": null,
+      "status": "extraido",
+      "confianca": "alta",
+      "motivos": [
+        "lido de imagem (PDF sem camada de texto): trecho não verificável",
+        "confirmado por golden.classe"
+      ],
+      "evidencia": {
+        "trecho": "Valor bruto por ação PN",
+        "pagina": 1,
+        "linha": null,
+        "verificada": null
+      }
+    }
+  },
+  "data_documento": {
+    "valor": "2026-06-06",
+    "unidade": null,
+    "status": "extraido",
+    "confianca": "media",
+    "motivos": [
+      "lido de imagem (PDF sem camada de texto): trecho não verificável"
+    ],
+    "evidencia": {
+      "trecho": "São Paulo (SP), 06 de junho de 2026.",
+      "pagina": 1,
+      "linha": null,
+      "verificada": null
+    }
+  },
+  "validacao_golden": {
+    "status": "ok",
+    "registro": {
+      "emissor": "Telecom Norte Participações S.A.",
+      "cnpj": "33.222.111/0001-44",
+      "isin": "BRTLNRACNPR2",
+      "ticker": "TLNR4",
+      "classe": "PN",
+      "segmento_listagem": "Tradicional",
+      "status": "ativo"
+    },
+    "chaves_encontradas": [
+      "cnpj",
+      "emissor",
+      "isin",
+      "ticker"
+    ],
+    "chaves_nao_encontradas": []
+  },
+  "eventos": [
+    {
+      "tipo": {
+        "valor": "jcp",
+        "unidade": null,
+        "status": "extraido",
+        "confianca": "alta",
+        "motivos": [
+          "LLM: O documento aprova o crédito de Juros sobre o Capital Próprio (JCP), com menção ao art. 9º da Lei nº 9.249/95 e incidência de IRRF à alíquota de 17,5% com detalhamento de valor bruto e líquido."
+        ],
+        "evidencia": null
+      },
+      "rotulo_documento": "AVISO AOS ACIONISTAS\nJuros sobre o Capital Próprio (JCP)",
+      "efeito": "Crédito em dinheiro: R$ 0,1124300000 bruto por ação, R$ 0,0927547500 líquido após IRRF de 17,5%",
+      "campos": {
+        "data_aprovacao": {
+          "valor": "2026-06-06",
+          "unidade": null,
+          "status": "extraido",
+          "confianca": "media",
+          "motivos": [
+            "lido de imagem (PDF sem camada de texto): trecho não verificável"
+          ],
+          "evidencia": {
+            "trecho": "reunião realizada em 06 de junho de 2026",
+            "pagina": 1,
+            "linha": null,
+            "verificada": null
+          }
+        },
+        "data_com": {
+          "valor": "2026-06-22",
+          "unidade": null,
+          "status": "extraido",
+          "confianca": "alta",
+          "motivos": [
+            "lido de imagem (PDF sem camada de texto): trecho não verificável",
+            "confirmado por datas.ex_proximo_dia_util"
+          ],
+          "evidencia": {
+            "trecho": "22 de junho de 2026 (data com)",
+            "pagina": 1,
+            "linha": null,
+            "verificada": null
+          }
+        },
+        "data_ex": {
+          "valor": "2026-06-23",
+          "unidade": null,
+          "status": "extraido",
+          "confianca": "alta",
+          "motivos": [
+            "lido de imagem (PDF sem camada de texto): trecho não verificável",
+            "confirmado por datas.ex_proximo_dia_util"
+          ],
+          "evidencia": {
+            "trecho": "a partir de 23 de junho de 2026",
+            "pagina": 1,
+            "linha": null,
+            "verificada": null
+          }
+        },
+        "data_pagamento": {
+          "valor": "2026-08-21",
+          "unidade": null,
+          "status": "extraido",
+          "confianca": "media",
+          "motivos": [
+            "lido de imagem (PDF sem camada de texto): trecho não verificável"
+          ],
+          "evidencia": {
+            "trecho": "Data de pagamento ................ 21/08/2026",
+            "pagina": 1,
+            "linha": null,
+            "verificada": null
+          }
+        },
+        "moeda": {
+          "valor": "BRL",
+          "unidade": null,
+          "status": "extraido",
+          "confianca": "alta",
+          "motivos": [
+            "lido de imagem (PDF sem camada de texto): trecho não verificável",
+            "confirmado por valores.moeda_vs_isin"
+          ],
+          "evidencia": {
+            "trecho": "R$ 0,1124300000",
+            "pagina": 1,
+            "linha": null,
+            "verificada": null
+          }
+        },
+        "valor_bruto": {
+          "valor": "0.1124300000",
+          "unidade": "BRL/acao",
+          "status": "extraido",
+          "confianca": "alta",
+          "motivos": [
+            "lido de imagem (PDF sem camada de texto): trecho não verificável",
+            "confirmado por valores.bruto_liquido_ir"
+          ],
+          "evidencia": {
+            "trecho": "Valor bruto por ação PN ......... R$ 0,1124300000",
+            "pagina": 1,
+            "linha": null,
+            "verificada": null
+          }
+        },
+        "aliquota_ir": {
+          "valor": "17.5",
+          "unidade": "%",
+          "status": "extraido",
+          "confianca": "alta",
+          "motivos": [
+            "lido de imagem (PDF sem camada de texto): trecho não verificável",
+            "confirmado por valores.bruto_liquido_ir"
+          ],
+          "evidencia": {
+            "trecho": "IRRF na fonte ......................... 17,5%",
+            "pagina": 1,
+            "linha": null,
+            "verificada": null
+          }
+        },
+        "valor_liquido": {
+          "valor": "0.0927547500",
+          "unidade": "BRL/acao",
+          "status": "extraido",
+          "confianca": "alta",
+          "motivos": [
+            "lido de imagem (PDF sem camada de texto): trecho não verificável",
+            "confirmado por valores.bruto_liquido_ir"
+          ],
+          "evidencia": {
+            "trecho": "Valor líquido por ação PN ....... R$ 0,0927547500",
+            "pagina": 1,
+            "linha": null,
+            "verificada": null
+          }
+        },
+        "proporcao": {
+          "valor": null,
+          "unidade": null,
+          "status": "nao_aplicavel",
+          "confianca": null,
+          "motivos": [],
+          "evidencia": null
+        },
+        "percentual_bonificacao": {
+          "valor": null,
+          "unidade": null,
+          "status": "nao_aplicavel",
+          "confianca": null,
+          "motivos": [],
+          "evidencia": null
+        },
+        "custo_atribuido": {
+          "valor": null,
+          "unidade": null,
+          "status": "nao_aplicavel",
+          "confianca": null,
+          "motivos": [],
+          "evidencia": null
+        }
+      },
+      "observacoes": [
+        "O dígito verificador do ISIN BRTLNRACNPR2 constante no aviso falha na checagem algorítmica de validação padrão, porém foi mantido conforme impresso no documento."
+      ]
+    }
+  ],
+  "revisao_humana": [
+    {
+      "campo": "eventos[0].data_pagamento",
+      "severidade": "revisao",
+      "motivo": "lido de imagem (PDF sem camada de texto): trecho não verificável",
+      "acao_sugerida": "Conferir o valor na imagem do documento original"
+    }
+  ],
+  "pendencias": [],
+  "verificacoes": [
+    {
+      "regra": "golden.identificacao",
+      "resultado": "ok",
+      "severidade": "bloqueante",
+      "detalhe": "cnpj, emissor, isin, ticker apontam para BRTLNRACNPR2",
+      "campos": [
+        "identificacao.isin",
+        "identificacao.ticker",
+        "identificacao.cnpj",
+        "identificacao.emissor"
+      ]
+    },
+    {
+      "regra": "golden.classe",
+      "resultado": "ok",
+      "severidade": "revisao",
+      "detalhe": "documento PN, base PN",
+      "campos": [
+        "identificacao.classe_acao"
+      ]
+    },
+    {
+      "regra": "isin.digito_verificador",
+      "resultado": "falha",
+      "severidade": "info",
+      "detalhe": "dígito verificador ISO 6166 não confere (esperado no lote sintético)",
+      "campos": []
+    },
+    {
+      "regra": "datas.com_dia_util",
+      "resultado": "ok",
+      "severidade": "revisao",
+      "detalhe": "data com 2026-06-22 (Mon)",
+      "campos": [
+        "eventos[0].data_com"
+      ]
+    },
+    {
+      "regra": "datas.com_antes_ex",
+      "resultado": "ok",
+      "severidade": "bloqueante",
+      "detalhe": "com 2026-06-22 < ex 2026-06-23",
+      "campos": [
+        "eventos[0].data_com",
+        "eventos[0].data_ex"
+      ]
+    },
+    {
+      "regra": "datas.ex_proximo_dia_util",
+      "resultado": "ok",
+      "severidade": "revisao",
+      "detalhe": "esperado 2026-06-23, informado 2026-06-23",
+      "campos": [
+        "eventos[0].data_com",
+        "eventos[0].data_ex"
+      ]
+    },
+    {
+      "regra": "datas.aprovacao_ate_com",
+      "resultado": "ok",
+      "severidade": "bloqueante",
+      "detalhe": "aprovação 2026-06-06 <= com 2026-06-22",
+      "campos": [
+        "eventos[0].data_aprovacao",
+        "eventos[0].data_com"
+      ]
+    },
+    {
+      "regra": "datas.aprovacao_ate_documento",
+      "resultado": "ok",
+      "severidade": "revisao",
+      "detalhe": "aprovação 2026-06-06 <= documento 2026-06-06",
+      "campos": [
+        "eventos[0].data_aprovacao",
+        "data_documento"
+      ]
+    },
+    {
+      "regra": "datas.pagamento_apos_com",
+      "resultado": "ok",
+      "severidade": "bloqueante",
+      "detalhe": "pagamento 2026-08-21 > com 2026-06-22",
+      "campos": [
+        "eventos[0].data_pagamento",
+        "eventos[0].data_com"
+      ]
+    },
+    {
+      "regra": "datas.pagamento_apos_ex",
+      "resultado": "ok",
+      "severidade": "revisao",
+      "detalhe": "pagamento 2026-08-21 >= ex 2026-06-23",
+      "campos": [
+        "eventos[0].data_pagamento",
+        "eventos[0].data_ex"
+      ]
+    },
+    {
+      "regra": "valores.moeda_vs_isin",
+      "resultado": "ok",
+      "severidade": "revisao",
+      "detalhe": "moeda BRL, ISIN BR",
+      "campos": [
+        "eventos[0].moeda"
+      ]
+    },
+    {
+      "regra": "valores.bruto_liquido_ir",
+      "resultado": "ok",
+      "severidade": "bloqueante",
+      "detalhe": "0.1124300000 × (1 − 0.175) = 0.09275475; informado 0.0927547500",
+      "campos": [
+        "eventos[0].valor_bruto",
+        "eventos[0].aliquota_ir",
+        "eventos[0].valor_liquido"
+      ]
+    },
+    {
+      "regra": "classificacao.palavras_chave",
+      "resultado": "ok",
+      "severidade": "bloqueante",
+      "detalhe": "LLM: jcp; regras por palavra-chave: jcp",
+      "campos": [
+        "eventos[0].tipo"
+      ]
+    }
+  ],
+  "auditoria": {
+    "modelo": "gemini/gemini-3.8-flash",
+    "prompt_versao": "v1",
+    "processado_em": "2026-10-24T23:26:15",
+    "resposta_llm_cache": "cache/llm/07_telecom_norte_jcp_SCAN.cf4af08dd23f.v1.gemini.json"
+  }
+}

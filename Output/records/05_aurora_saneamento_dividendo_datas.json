@@ -1,0 +1,426 @@
+{
+  "documento": {
+    "arquivo": "05_aurora_saneamento_dividendo_datas.pdf",
+    "sha256": "925b6eb09fbcaecf81d3c1d125e041edd1460fed23d6a67bf10f8a6b170e9567",
+    "paginas": 1,
+    "fonte": "texto_nativo"
+  },
+  "status": "revisao_humana",
+  "resumo_operador": "Dividendo AURS3. Crédito em dinheiro: R$ 0,3100000000 bruto por ação; líquido depende do beneficiário (sem alíquota uniforme por ação). Data com 15/07/2026, ex 16/07/2026, pagamento/crédito 10/07/2026. Requer revisão humana: 2 item(ns).",
+  "identificacao": {
+    "emissor": {
+      "valor": "Aurora Saneamento S.A.",
+      "unidade": null,
+      "status": "extraido",
+      "confianca": "alta",
+      "motivos": [
+        "trecho localizado no PDF (pág. 1, linha 6)",
+        "confirmado por golden.identificacao"
+      ],
+      "evidencia": {
+        "trecho": "AURORA  SANEAMENTO   S.A.",
+        "pagina": 1,
+        "linha": 6,
+        "verificada": true
+      }
+    },
+    "cnpj": {
+      "valor": "22.333.444/0001-77",
+      "unidade": null,
+      "status": "extraido",
+      "confianca": "alta",
+      "motivos": [
+        "trecho localizado no PDF (pág. 1, linha 7)",
+        "confirmado por golden.identificacao"
+      ],
+      "evidencia": {
+        "trecho": "CNPJ/ME nº 22.333.444/0001-77",
+        "pagina": 1,
+        "linha": 7,
+        "verificada": true
+      }
+    },
+    "isin": {
+      "valor": "BRAURSACNOR4",
+      "unidade": null,
+      "status": "extraido",
+      "confianca": "alta",
+      "motivos": [
+        "trecho localizado no PDF (pág. 1, linha 32)",
+        "confirmado por golden.identificacao"
+      ],
+      "evidencia": {
+        "trecho": "ISIN BRAURSACNOR4",
+        "pagina": 1,
+        "linha": 32,
+        "verificada": true
+      }
+    },
+    "ticker": {
+      "valor": "AURS3",
+      "unidade": null,
+      "status": "extraido",
+      "confianca": "alta",
+      "motivos": [
+        "trecho localizado no PDF (pág. 1, linha 32)",
+        "confirmado por golden.identificacao"
+      ],
+      "evidencia": {
+        "trecho": "Código de negociação    AURS3",
+        "pagina": 1,
+        "linha": 32,
+        "verificada": true
+      }
+    },
+    "classe_acao": {
+      "valor": "ON",
+      "unidade": null,
+      "status": "extraido",
+      "confianca": "alta",
+      "motivos": [
+        "trecho localizado no PDF (pág. 1, linha 24)",
+        "confirmado por golden.classe"
+      ],
+      "evidencia": {
+        "trecho": "Valor bruto por ação ON",
+        "pagina": 1,
+        "linha": 24,
+        "verificada": true
+      }
+    }
+  },
+  "data_documento": {
+    "valor": "2026-06-01",
+    "unidade": null,
+    "status": "extraido",
+    "confianca": "alta",
+    "motivos": [
+      "trecho localizado no PDF (pág. 1, linha 35)",
+      "valor aparece 3x no documento (corpo e tabela concordam)"
+    ],
+    "evidencia": {
+      "trecho": "Belo Horizonte (MG), 01 de junho de 2026.",
+      "pagina": 1,
+      "linha": 35,
+      "verificada": true
+    }
+  },
+  "validacao_golden": {
+    "status": "ok",
+    "registro": {
+      "emissor": "Aurora Saneamento S.A.",
+      "cnpj": "22.333.444/0001-77",
+      "isin": "BRAURSACNOR4",
+      "ticker": "AURS3",
+      "classe": "ON",
+      "segmento_listagem": "Novo Mercado",
+      "status": "ativo"
+    },
+    "chaves_encontradas": [
+      "cnpj",
+      "emissor",
+      "isin",
+      "ticker"
+    ],
+    "chaves_nao_encontradas": []
+  },
+  "eventos": [
+    {
+      "tipo": {
+        "valor": "dividendo",
+        "unidade": null,
+        "status": "extraido",
+        "confianca": "alta",
+        "motivos": [
+          "LLM: O documento declara expressamente distribuição de dividendos intercalares à conta de reservas de lucros, sem retenção de IRRF uniforme por ação."
+        ],
+        "evidencia": null
+      },
+      "rotulo_documento": "AVISO AOS ACIONISTAS — Pagamento de Dividendos Intercalares",
+      "efeito": "Crédito em dinheiro: R$ 0,3100000000 bruto por ação; líquido depende do beneficiário (sem alíquota uniforme por ação)",
+      "campos": {
+        "data_aprovacao": {
+          "valor": "2026-06-01",
+          "unidade": null,
+          "status": "extraido",
+          "confianca": "alta",
+          "motivos": [
+            "trecho localizado no PDF (pág. 1, linha 25)",
+            "valor aparece 3x no documento (corpo e tabela concordam)"
+          ],
+          "evidencia": {
+            "trecho": "Data de aprovação (RCA) 01/06/2026",
+            "pagina": 1,
+            "linha": 25,
+            "verificada": true
+          }
+        },
+        "data_com": {
+          "valor": "2026-07-15",
+          "unidade": null,
+          "status": "extraido",
+          "confianca": "baixa",
+          "motivos": [
+            "trecho localizado no PDF (pág. 1, linha 27)",
+            "valor aparece 2x no documento (corpo e tabela concordam)",
+            "confirmado por datas.ex_proximo_dia_util",
+            "falhou em datas.pagamento_apos_com: pagamento 2026-07-10 > com 2026-07-15"
+          ],
+          "evidencia": {
+            "trecho": "Data-base (“data com”)  15/07/2026",
+            "pagina": 1,
+            "linha": 27,
+            "verificada": true
+          }
+        },
+        "data_ex": {
+          "valor": "2026-07-16",
+          "unidade": null,
+          "status": "extraido",
+          "confianca": "baixa",
+          "motivos": [
+            "trecho localizado no PDF (pág. 1, linha 29)",
+            "valor aparece 2x no documento (corpo e tabela concordam)",
+            "confirmado por datas.ex_proximo_dia_util",
+            "falhou em datas.pagamento_apos_ex: pagamento 2026-07-10 >= ex 2026-07-16"
+          ],
+          "evidencia": {
+            "trecho": "Data “ex-dividendos”    16/07/2026",
+            "pagina": 1,
+            "linha": 29,
+            "verificada": true
+          }
+        },
+        "data_pagamento": {
+          "valor": "2026-07-10",
+          "unidade": null,
+          "status": "extraido",
+          "confianca": "baixa",
+          "motivos": [
+            "trecho localizado no PDF (pág. 1, linha 30)",
+            "falhou em datas.pagamento_apos_com: pagamento 2026-07-10 > com 2026-07-15",
+            "falhou em datas.pagamento_apos_ex: pagamento 2026-07-10 >= ex 2026-07-16"
+          ],
+          "evidencia": {
+            "trecho": "Data de pagamento       10/07/2026",
+            "pagina": 1,
+            "linha": 30,
+            "verificada": true
+          }
+        },
+        "moeda": {
+          "valor": "BRL",
+          "unidade": null,
+          "status": "extraido",
+          "confianca": "alta",
+          "motivos": [
+            "trecho localizado no PDF (pág. 1, linha 24)",
+            "confirmado por valores.moeda_vs_isin"
+          ],
+          "evidencia": {
+            "trecho": "R$",
+            "pagina": 1,
+            "linha": 24,
+            "verificada": true
+          }
+        },
+        "valor_bruto": {
+          "valor": "0.3100000000",
+          "unidade": "BRL/acao",
+          "status": "extraido",
+          "confianca": "alta",
+          "motivos": [
+            "trecho localizado no PDF (pág. 1, linha 24)"
+          ],
+          "evidencia": {
+            "trecho": "Valor bruto por ação ON R$ 0,3100000000",
+            "pagina": 1,
+            "linha": 24,
+            "verificada": true
+          }
+        },
+        "aliquota_ir": {
+          "valor": null,
+          "unidade": "%",
+          "status": "nao_encontrado",
+          "confianca": null,
+          "motivos": [],
+          "evidencia": null
+        },
+        "valor_liquido": {
+          "valor": null,
+          "unidade": "BRL/acao",
+          "status": "nao_encontrado",
+          "confianca": null,
+          "motivos": [],
+          "evidencia": null
+        },
+        "proporcao": {
+          "valor": null,
+          "unidade": null,
+          "status": "nao_aplicavel",
+          "confianca": null,
+          "motivos": [],
+          "evidencia": null
+        },
+        "percentual_bonificacao": {
+          "valor": null,
+          "unidade": null,
+          "status": "nao_aplicavel",
+          "confianca": null,
+          "motivos": [],
+          "evidencia": null
+        },
+        "custo_atribuido": {
+          "valor": null,
+          "unidade": null,
+          "status": "nao_aplicavel",
+          "confianca": null,
+          "motivos": [],
+          "evidencia": null
+        }
+      },
+      "observacoes": [
+        "Incoerência cronológica no documento: a data de pagamento informada (10/07/2026) é anterior à data-base / data com (15/07/2026) e à data ex (16/07/2026)."
+      ]
+    }
+  ],
+  "revisao_humana": [
+    {
+      "campo": "eventos[0].data_pagamento, eventos[0].data_com",
+      "severidade": "bloqueante",
+      "motivo": "datas.pagamento_apos_com: pagamento 2026-07-10 > com 2026-07-15",
+      "acao_sugerida": "Confirmar as datas com a área de RI do emissor; não processar até corrigir"
+    },
+    {
+      "campo": "eventos[0].data_pagamento, eventos[0].data_ex",
+      "severidade": "revisao",
+      "motivo": "datas.pagamento_apos_ex: pagamento 2026-07-10 >= ex 2026-07-16",
+      "acao_sugerida": "Confirmar as datas com a área de RI do emissor; não processar até corrigir"
+    }
+  ],
+  "pendencias": [],
+  "verificacoes": [
+    {
+      "regra": "golden.identificacao",
+      "resultado": "ok",
+      "severidade": "bloqueante",
+      "detalhe": "cnpj, emissor, isin, ticker apontam para BRAURSACNOR4",
+      "campos": [
+        "identificacao.isin",
+        "identificacao.ticker",
+        "identificacao.cnpj",
+        "identificacao.emissor"
+      ]
+    },
+    {
+      "regra": "golden.classe",
+      "resultado": "ok",
+      "severidade": "revisao",
+      "detalhe": "documento ON, base ON",
+      "campos": [
+        "identificacao.classe_acao"
+      ]
+    },
+    {
+      "regra": "isin.digito_verificador",
+      "resultado": "falha",
+      "severidade": "info",
+      "detalhe": "dígito verificador ISO 6166 não confere (esperado no lote sintético)",
+      "campos": []
+    },
+    {
+      "regra": "datas.com_dia_util",
+      "resultado": "ok",
+      "severidade": "revisao",
+      "detalhe": "data com 2026-07-15 (Wed)",
+      "campos": [
+        "eventos[0].data_com"
+      ]
+    },
+    {
+      "regra": "datas.com_antes_ex",
+      "resultado": "ok",
+      "severidade": "bloqueante",
+      "detalhe": "com 2026-07-15 < ex 2026-07-16",
+      "campos": [
+        "eventos[0].data_com",
+        "eventos[0].data_ex"
+      ]
+    },
+    {
+      "regra": "datas.ex_proximo_dia_util",
+      "resultado": "ok",
+      "severidade": "revisao",
+      "detalhe": "esperado 2026-07-16, informado 2026-07-16",
+      "campos": [
+        "eventos[0].data_com",
+        "eventos[0].data_ex"
+      ]
+    },
+    {
+      "regra": "datas.aprovacao_ate_com",
+      "resultado": "ok",
+      "severidade": "bloqueante",
+      "detalhe": "aprovação 2026-06-01 <= com 2026-07-15",
+      "campos": [
+        "eventos[0].data_aprovacao",
+        "eventos[0].data_com"
+      ]
+    },
+    {
+      "regra": "datas.aprovacao_ate_documento",
+      "resultado": "ok",
+      "severidade": "revisao",
+      "detalhe": "aprovação 2026-06-01 <= documento 2026-06-01",
+      "campos": [
+        "eventos[0].data_aprovacao",
+        "data_documento"
+      ]
+    },
+    {
+      "regra": "datas.pagamento_apos_com",
+      "resultado": "falha",
+      "severidade": "bloqueante",
+      "detalhe": "pagamento 2026-07-10 > com 2026-07-15",
+      "campos": [
+        "eventos[0].data_pagamento",
+        "eventos[0].data_com"
+      ]
+    },
+    {
+      "regra": "datas.pagamento_apos_ex",
+      "resultado": "falha",
+      "severidade": "revisao",
+      "detalhe": "pagamento 2026-07-10 >= ex 2026-07-16",
+      "campos": [
+        "eventos[0].data_pagamento",
+        "eventos[0].data_ex"
+      ]
+    },
+    {
+      "regra": "valores.moeda_vs_isin",
+      "resultado": "ok",
+      "severidade": "revisao",
+      "detalhe": "moeda BRL, ISIN BR",
+      "campos": [
+        "eventos[0].moeda"
+      ]
+    },
+    {
+      "regra": "classificacao.palavras_chave",
+      "resultado": "ok",
+      "severidade": "bloqueante",
+      "detalhe": "LLM: dividendo; regras por palavra-chave: dividendo",
+      "campos": [
+        "eventos[0].tipo"
+      ]
+    }
+  ],
+  "auditoria": {
+    "modelo": "gemini/gemini-3.8-flash",
+    "prompt_versao": "v1",
+    "processado_em": "2026-10-24T23:20:19",
+    "resposta_llm_cache": "cache/llm/05_aurora_saneamento_dividendo_datas.925b6eb09fbc.v1.gemini.json"
+  }
+}

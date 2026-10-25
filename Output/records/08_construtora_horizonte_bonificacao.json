@@ -1,0 +1,402 @@
+{
+  "documento": {
+    "arquivo": "08_construtora_horizonte_bonificacao.pdf",
+    "sha256": "a509637f4b258454309e1d21e81beca56701a78624b8a6a6f9a6b0ec9389b0e5",
+    "paginas": 1,
+    "fonte": "texto_nativo"
+  },
+  "status": "revisao_humana",
+  "resumo_operador": "Bonificação CNHZ3. Crédito de ações: 1 nova(s) para cada 20 detidas (quantidade × 21/20); custo atribuído R$ 7,820000 por ação nova. Data com 18/06/2026, ex 19/06/2026, pagamento/crédito 26/06/2026. Requer revisão humana: 1 item(ns).",
+  "identificacao": {
+    "emissor": {
+      "valor": "CONSTRUTORA HORIZONTE S.A.",
+      "unidade": null,
+      "status": "extraido",
+      "confianca": "media",
+      "motivos": [
+        "trecho localizado no PDF (pág. 1, linha 6)",
+        "não validável: emissor/ativo não consta na base de referência"
+      ],
+      "evidencia": {
+        "trecho": "CONSTRUTORA   HORIZONTE  S.A.",
+        "pagina": 1,
+        "linha": 6,
+        "verificada": true
+      }
+    },
+    "cnpj": {
+      "valor": "09.888.999/0001-21",
+      "unidade": null,
+      "status": "extraido",
+      "confianca": "media",
+      "motivos": [
+        "trecho localizado no PDF (pág. 1, linha 7)",
+        "não validável: emissor/ativo não consta na base de referência"
+      ],
+      "evidencia": {
+        "trecho": "CNPJ/ME nº 09.888.999/0001-21",
+        "pagina": 1,
+        "linha": 7,
+        "verificada": true
+      }
+    },
+    "isin": {
+      "valor": "BRCNHZACNOR5",
+      "unidade": null,
+      "status": "extraido",
+      "confianca": "media",
+      "motivos": [
+        "trecho localizado no PDF (pág. 1, linha 34)",
+        "não validável: emissor/ativo não consta na base de referência"
+      ],
+      "evidencia": {
+        "trecho": "ISIN BRCNHZACNOR5",
+        "pagina": 1,
+        "linha": 34,
+        "verificada": true
+      }
+    },
+    "ticker": {
+      "valor": "CNHZ3",
+      "unidade": null,
+      "status": "extraido",
+      "confianca": "media",
+      "motivos": [
+        "trecho localizado no PDF (pág. 1, linha 34)",
+        "não validável: emissor/ativo não consta na base de referência"
+      ],
+      "evidencia": {
+        "trecho": "Código de negociação    CNHZ3",
+        "pagina": 1,
+        "linha": 34,
+        "verificada": true
+      }
+    },
+    "classe_acao": {
+      "valor": null,
+      "unidade": null,
+      "status": "nao_encontrado",
+      "confianca": null,
+      "motivos": [],
+      "evidencia": null
+    }
+  },
+  "data_documento": {
+    "valor": "2026-06-04",
+    "unidade": null,
+    "status": "extraido",
+    "confianca": "alta",
+    "motivos": [
+      "trecho localizado no PDF (pág. 1, linha 37)",
+      "valor aparece 2x no documento (corpo e tabela concordam)"
+    ],
+    "evidencia": {
+      "trecho": "São Paulo (SP), 04 de junho de 2026.",
+      "pagina": 1,
+      "linha": 37,
+      "verificada": true
+    }
+  },
+  "validacao_golden": {
+    "status": "nao_encontrado",
+    "registro": null,
+    "chaves_encontradas": [],
+    "chaves_nao_encontradas": [
+      "isin",
+      "ticker",
+      "cnpj",
+      "emissor"
+    ]
+  },
+  "eventos": [
+    {
+      "tipo": {
+        "valor": "bonificacao",
+        "unidade": null,
+        "status": "extraido",
+        "confianca": "alta",
+        "motivos": [
+          "LLM: Aumento do capital social mediante capitalização de reservas com consequente bonificação em ações aos acionistas, na proporção de 1 nova ação para cada 20 possuídas (5%) e custo unitário atribuído para fins fiscais."
+        ],
+        "evidencia": null
+      },
+      "rotulo_documento": "AVISO AOS ACIONISTAS — Bonificação em Ações",
+      "efeito": "Crédito de ações: 1 nova(s) para cada 20 detidas (quantidade × 21/20); custo atribuído R$ 7,820000 por ação nova",
+      "campos": {
+        "data_aprovacao": {
+          "valor": "2026-06-04",
+          "unidade": null,
+          "status": "extraido",
+          "confianca": "alta",
+          "motivos": [
+            "trecho localizado no PDF (pág. 1, linha 13)",
+            "valor aparece 2x no documento (corpo e tabela concordam)"
+          ],
+          "evidencia": {
+            "trecho": "Assembleia Geral Extraordinária de\n         04 de junho de 2026",
+            "pagina": 1,
+            "linha": 13,
+            "verificada": true
+          }
+        },
+        "data_com": {
+          "valor": "2026-06-18",
+          "unidade": null,
+          "status": "extraido",
+          "confianca": "alta",
+          "motivos": [
+            "trecho localizado no PDF (pág. 1, linha 29)",
+            "valor aparece 2x no documento (corpo e tabela concordam)",
+            "confirmado por datas.ex_proximo_dia_util"
+          ],
+          "evidencia": {
+            "trecho": "Data-base (“data com”)  18/06/2026",
+            "pagina": 1,
+            "linha": 29,
+            "verificada": true
+          }
+        },
+        "data_ex": {
+          "valor": "2026-06-19",
+          "unidade": null,
+          "status": "extraido",
+          "confianca": "alta",
+          "motivos": [
+            "trecho localizado no PDF (pág. 1, linha 31)",
+            "valor aparece 2x no documento (corpo e tabela concordam)",
+            "confirmado por datas.ex_proximo_dia_util"
+          ],
+          "evidencia": {
+            "trecho": "Data “ex-bonificação”   19/06/2026",
+            "pagina": 1,
+            "linha": 31,
+            "verificada": true
+          }
+        },
+        "data_pagamento": {
+          "valor": "2026-06-26",
+          "unidade": null,
+          "status": "extraido",
+          "confianca": "alta",
+          "motivos": [
+            "trecho localizado no PDF (pág. 1, linha 33)"
+          ],
+          "evidencia": {
+            "trecho": "Crédito das ações bonificadas 26/06/2026",
+            "pagina": 1,
+            "linha": 33,
+            "verificada": true
+          }
+        },
+        "moeda": {
+          "valor": null,
+          "unidade": null,
+          "status": "nao_encontrado",
+          "confianca": null,
+          "motivos": [],
+          "evidencia": null
+        },
+        "valor_bruto": {
+          "valor": null,
+          "unidade": null,
+          "status": "nao_aplicavel",
+          "confianca": null,
+          "motivos": [],
+          "evidencia": null
+        },
+        "aliquota_ir": {
+          "valor": null,
+          "unidade": null,
+          "status": "nao_aplicavel",
+          "confianca": null,
+          "motivos": [],
+          "evidencia": null
+        },
+        "valor_liquido": {
+          "valor": null,
+          "unidade": null,
+          "status": "nao_aplicavel",
+          "confianca": null,
+          "motivos": [],
+          "evidencia": null
+        },
+        "proporcao": {
+          "valor": "1:20",
+          "unidade": "novas:base",
+          "status": "extraido",
+          "confianca": "alta",
+          "motivos": [
+            "trecho localizado no PDF (pág. 1, linha 26)",
+            "confirmado por valores.proporcao_vs_percentual"
+          ],
+          "evidencia": {
+            "trecho": "Proporção               1 ação nova para cada 20 ações (5%)",
+            "pagina": 1,
+            "linha": 26,
+            "verificada": true
+          }
+        },
+        "percentual_bonificacao": {
+          "valor": "5",
+          "unidade": "%",
+          "status": "extraido",
+          "confianca": "alta",
+          "motivos": [
+            "trecho localizado no PDF (pág. 1, linha 26)",
+            "confirmado por valores.proporcao_vs_percentual"
+          ],
+          "evidencia": {
+            "trecho": "Proporção               1 ação nova para cada 20 ações (5%)",
+            "pagina": 1,
+            "linha": 26,
+            "verificada": true
+          }
+        },
+        "custo_atribuido": {
+          "valor": "7.820000",
+          "unidade": "BRL/acao",
+          "status": "extraido",
+          "confianca": "alta",
+          "motivos": [
+            "trecho localizado no PDF (pág. 1, linha 21)",
+            "valor aparece 2x no documento (corpo e tabela concordam)"
+          ],
+          "evidencia": {
+            "trecho": "Custo unitário atribuído às ações bonificadas, para fins fiscais, é de R$ 7,820000 por ação",
+            "pagina": 1,
+            "linha": 21,
+            "verificada": true
+          }
+        }
+      },
+      "observacoes": [
+        "As frações resultantes serão alienadas em leilão na B3.",
+        "O dígito verificador do ISIN BRCNHZACNOR5 informado no aviso é inválido conforme cálculo de validação ISIN."
+      ]
+    }
+  ],
+  "revisao_humana": [
+    {
+      "campo": "identificacao.isin, identificacao.ticker, identificacao.cnpj, identificacao.emissor",
+      "severidade": "revisao",
+      "motivo": "golden.identificacao: emissor/ativo não consta na base de referência",
+      "acao_sugerida": "Confirmar identificação do ativo em fonte oficial (B3/CVM) e atualizar a base de referência"
+    }
+  ],
+  "pendencias": [],
+  "verificacoes": [
+    {
+      "regra": "golden.identificacao",
+      "resultado": "nao_validado",
+      "severidade": "revisao",
+      "detalhe": "emissor/ativo não consta na base de referência",
+      "campos": [
+        "identificacao.isin",
+        "identificacao.ticker",
+        "identificacao.cnpj",
+        "identificacao.emissor"
+      ]
+    },
+    {
+      "regra": "isin.digito_verificador",
+      "resultado": "falha",
+      "severidade": "info",
+      "detalhe": "dígito verificador ISO 6166 não confere (esperado no lote sintético)",
+      "campos": []
+    },
+    {
+      "regra": "datas.com_dia_util",
+      "resultado": "ok",
+      "severidade": "revisao",
+      "detalhe": "data com 2026-06-18 (Thu)",
+      "campos": [
+        "eventos[0].data_com"
+      ]
+    },
+    {
+      "regra": "datas.com_antes_ex",
+      "resultado": "ok",
+      "severidade": "bloqueante",
+      "detalhe": "com 2026-06-18 < ex 2026-06-19",
+      "campos": [
+        "eventos[0].data_com",
+        "eventos[0].data_ex"
+      ]
+    },
+    {
+      "regra": "datas.ex_proximo_dia_util",
+      "resultado": "ok",
+      "severidade": "revisao",
+      "detalhe": "esperado 2026-06-19, informado 2026-06-19",
+      "campos": [
+        "eventos[0].data_com",
+        "eventos[0].data_ex"
+      ]
+    },
+    {
+      "regra": "datas.aprovacao_ate_com",
+      "resultado": "ok",
+      "severidade": "bloqueante",
+      "detalhe": "aprovação 2026-06-04 <= com 2026-06-18",
+      "campos": [
+        "eventos[0].data_aprovacao",
+        "eventos[0].data_com"
+      ]
+    },
+    {
+      "regra": "datas.aprovacao_ate_documento",
+      "resultado": "ok",
+      "severidade": "revisao",
+      "detalhe": "aprovação 2026-06-04 <= documento 2026-06-04",
+      "campos": [
+        "eventos[0].data_aprovacao",
+        "data_documento"
+      ]
+    },
+    {
+      "regra": "datas.pagamento_apos_com",
+      "resultado": "ok",
+      "severidade": "bloqueante",
+      "detalhe": "pagamento 2026-06-26 > com 2026-06-18",
+      "campos": [
+        "eventos[0].data_pagamento",
+        "eventos[0].data_com"
+      ]
+    },
+    {
+      "regra": "datas.pagamento_apos_ex",
+      "resultado": "ok",
+      "severidade": "revisao",
+      "detalhe": "pagamento 2026-06-26 >= ex 2026-06-19",
+      "campos": [
+        "eventos[0].data_pagamento",
+        "eventos[0].data_ex"
+      ]
+    },
+    {
+      "regra": "valores.proporcao_vs_percentual",
+      "resultado": "ok",
+      "severidade": "bloqueante",
+      "detalhe": "1/20 = 5.0000%; informado 5.0000%",
+      "campos": [
+        "eventos[0].proporcao",
+        "eventos[0].percentual_bonificacao"
+      ]
+    },
+    {
+      "regra": "classificacao.palavras_chave",
+      "resultado": "ok",
+      "severidade": "bloqueante",
+      "detalhe": "LLM: bonificacao; regras por palavra-chave: bonificacao",
+      "campos": [
+        "eventos[0].tipo"
+      ]
+    }
+  ],
+  "auditoria": {
+    "modelo": "gemini/gemini-3.8-flash",
+    "prompt_versao": "v1",
+    "processado_em": "2026-10-24T23:27:54",
+    "resposta_llm_cache": "cache/llm/08_construtora_horizonte_bonificacao.a509637f4b25.v1.gemini.json"
+  }
+}

@@ -1,0 +1,221 @@
+{
+  "arquivo": "07_telecom_norte_jcp_SCAN.pdf",
+  "sha256": "cf4af08dd23f507ae72b852d86827bbee6c3fe2d0e31f96e70bc74ea4238c45f",
+  "prompt_versao": "v1",
+  "provider": "gemini",
+  "modelo": "gemini-3.8-flash",
+  "processado_em": "2026-10-24T23:26:15",
+  "chamadas_ferramentas": [
+    {
+      "ferramenta": "lookup_golden_record",
+      "argumentos": {
+        "ticker": "TLNR4",
+        "isin": "BRTLNRACNPR2",
+        "emissor": "TELECOM NORTE PARTICIPAÇÕES S.A.",
+        "cnpj": "33.222.111/0001-44"
+      },
+      "resultado": {
+        "status": "ok",
+        "registro": {
+          "emissor": "Telecom Norte Participações S.A.",
+          "cnpj": "33.222.111/0001-44",
+          "isin": "BRTLNRACNPR2",
+          "ticker": "TLNR4",
+          "classe": "PN",
+          "segmento_listagem": "Tradicional",
+          "status": "ativo"
+        },
+        "chaves_encontradas": [
+          "cnpj",
+          "emissor",
+          "isin",
+          "ticker"
+        ],
+        "chaves_nao_encontradas": [],
+        "isin_por_chave": {
+          "isin": "BRTLNRACNPR2",
+          "ticker": "BRTLNRACNPR2",
+          "cnpj": "BRTLNRACNPR2",
+          "emissor": "BRTLNRACNPR2"
+        },
+        "isin_digito_verificador_ok": false,
+        "classe_pelo_ticker": "PN"
+      }
+    },
+    {
+      "ferramenta": "validate_dates",
+      "argumentos": {
+        "data_pagamento": "2026-08-21",
+        "data_aprovacao": "2026-06-06",
+        "data_com": "2026-06-22",
+        "tipo_evento": "jcp",
+        "data_ex": "2026-06-23",
+        "data_documento": "2026-06-06"
+      },
+      "resultado": {
+        "resultado": [
+          {
+            "regra": "datas.com_dia_util",
+            "resultado": "ok",
+            "severidade": "revisao",
+            "detalhe": "data com 2026-06-22 (Mon)"
+          },
+          {
+            "regra": "datas.com_antes_ex",
+            "resultado": "ok",
+            "severidade": "bloqueante",
+            "detalhe": "com 2026-06-22 < ex 2026-06-23"
+          },
+          {
+            "regra": "datas.ex_proximo_dia_util",
+            "resultado": "ok",
+            "severidade": "revisao",
+            "detalhe": "esperado 2026-06-23, informado 2026-06-23"
+          },
+          {
+            "regra": "datas.aprovacao_ate_com",
+            "resultado": "ok",
+            "severidade": "bloqueante",
+            "detalhe": "aprovação 2026-06-06 <= com 2026-06-22"
+          },
+          {
+            "regra": "datas.aprovacao_ate_documento",
+            "resultado": "ok",
+            "severidade": "revisao",
+            "detalhe": "aprovação 2026-06-06 <= documento 2026-06-06"
+          },
+          {
+            "regra": "datas.pagamento_apos_com",
+            "resultado": "ok",
+            "severidade": "bloqueante",
+            "detalhe": "pagamento 2026-08-21 > com 2026-06-22"
+          },
+          {
+            "regra": "datas.pagamento_apos_ex",
+            "resultado": "ok",
+            "severidade": "revisao",
+            "detalhe": "pagamento 2026-08-21 >= ex 2026-06-23"
+          }
+        ]
+      }
+    },
+    {
+      "ferramenta": "check_gross_net",
+      "argumentos": {
+        "valor_liquido": "0.0927547500",
+        "valor_bruto": "0.1124300000",
+        "aliquota_ir": "17.5"
+      },
+      "resultado": {
+        "regra": "valores.bruto_liquido_ir",
+        "resultado": "ok",
+        "severidade": "bloqueante",
+        "detalhe": "0.1124300000 × (1 − 0.175) = 0.09275475; informado 0.0927547500"
+      }
+    }
+  ],
+  "extracao": {
+    "identificacao": {
+      "emissor": {
+        "valor": "Telecom Norte Participações S.A.",
+        "trecho": "TELECOM NORTE PARTICIPAÇÕES S.A.",
+        "pagina": 1
+      },
+      "cnpj": {
+        "valor": "33.222.111/0001-44",
+        "trecho": "CNPJ/ME nº 33.222.111/0001-44",
+        "pagina": 1
+      },
+      "isin": {
+        "valor": "BRTLNRACNPR2",
+        "trecho": "ISIN BRTLNRACNPR2",
+        "pagina": 1
+      },
+      "ticker": {
+        "valor": "TLNR4",
+        "trecho": "Código de negociação .......... TLNR4",
+        "pagina": 1
+      },
+      "classe_acao": {
+        "valor": "PN",
+        "trecho": "Valor bruto por ação PN",
+        "pagina": 1
+      }
+    },
+    "data_documento": {
+      "valor": "2026-06-06",
+      "trecho": "São Paulo (SP), 06 de junho de 2026.",
+      "pagina": 1
+    },
+    "eventos": [
+      {
+        "tipo_evento": "jcp",
+        "justificativa_tipo": "O documento aprova o crédito de Juros sobre o Capital Próprio (JCP), com menção ao art. 9º da Lei nº 9.249/95 e incidência de IRRF à alíquota de 17,5% com detalhamento de valor bruto e líquido.",
+        "rotulo_documento": {
+          "valor": "AVISO AOS ACIONISTAS Juros sobre o Capital Próprio (JCP)",
+          "trecho": "AVISO AOS ACIONISTAS\nJuros sobre o Capital Próprio (JCP)",
+          "pagina": 1
+        },
+        "data_aprovacao": {
+          "valor": "2026-06-06",
+          "trecho": "reunião realizada em 06 de junho de 2026",
+          "pagina": 1
+        },
+        "data_com": {
+          "valor": "2026-06-22",
+          "trecho": "22 de junho de 2026 (data com)",
+          "pagina": 1
+        },
+        "data_ex": {
+          "valor": "2026-06-23",
+          "trecho": "a partir de 23 de junho de 2026",
+          "pagina": 1
+        },
+        "data_pagamento": {
+          "valor": "2026-08-21",
+          "trecho": "Data de pagamento ................ 21/08/2026",
+          "pagina": 1
+        },
+        "moeda": {
+          "valor": "BRL",
+          "trecho": "R$ 0,1124300000",
+          "pagina": 1
+        },
+        "valor_bruto": {
+          "valor": "0.1124300000",
+          "trecho": "Valor bruto por ação PN ......... R$ 0,1124300000",
+          "pagina": 1
+        },
+        "aliquota_ir": {
+          "valor": "17.5",
+          "trecho": "IRRF na fonte ......................... 17,5%",
+          "pagina": 1
+        },
+        "valor_liquido": {
+          "valor": "0.0927547500",
+          "trecho": "Valor líquido por ação PN ....... R$ 0,0927547500",
+          "pagina": 1
+        },
+        "proporcao": {
+          "valor": null,
+          "trecho": null,
+          "pagina": null
+        },
+        "percentual_bonificacao": {
+          "valor": null,
+          "trecho": null,
+          "pagina": null
+        },
+        "custo_atribuido": {
+          "valor": null,
+          "trecho": null,
+          "pagina": null
+        },
+        "observacoes": [
+          "O dígito verificador do ISIN BRTLNRACNPR2 constante no aviso falha na checagem algorítmica de validação padrão, porém foi mantido conforme impresso no documento."
+        ]
+      }
+    ],
+    "transcricao": "TELECOM NORTE PARTICIPAÇÕES S.A.\nCompanhia Aberta | CNPJ/ME nº 33.222.111/0001-44 | NIRE 33.300.000.007\n\nAVISO AOS ACIONISTAS\nJuros sobre o Capital Próprio (JCP)\n\nA Telecom Norte Participações S.A. comunica aos seus acionistas que o\nConselho de Administração, em reunião realizada em 06 de junho de 2026,\naprovou o crédito de Juros sobre o Capital Próprio (JCP), nos termos do\nart. 9º da Lei nº 9.249/95, com retenção de Imposto de Renda na Fonte\n(IRRF) à alíquota de 17,5% sobre o valor bruto.\n\nFarão jus ao provento os acionistas inscritos nos registros da Companhia\nao final do dia 22 de junho de 2026 (data com). As ações passarão a ser\nnegociadas ex-JCP a partir de 23 de junho de 2026.\n\nTipo de evento ......................... Juros sobre o Capital Próprio (JCP)\nValor bruto por ação PN ......... R$ 0,1124300000\nIRRF na fonte ......................... 17,5%\nValor líquido por ação PN ....... R$ 0,0927547500\nData-base (data com) .............. 22/06/2026\nData ex-JCP ............................ 23/06/2026\nData de pagamento ................ 21/08/2026\nCódigo de negociação .......... TLNR4 (ISIN BRTLNRACNPR2)\n\nSão Paulo (SP), 06 de junho de 2026.\n\nAna Beatriz Moraes\nDiretora de Relações com Investidores"
+  }
+}

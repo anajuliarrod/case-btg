@@ -1,0 +1,246 @@
+{
+  "arquivo": "04_rede_varejo_jcp_sem_data.pdf",
+  "sha256": "37f846a73cb5486b543bb1e580144c8d94eafee4aa7396424637c063a3bfbb83",
+  "prompt_versao": "v1",
+  "provider": "claude",
+  "modelo": "claude-sonnet-5-5",
+  "processado_em": "2026-10-21T22:41:28",
+  "chamadas_ferramentas": [
+    {
+      "ferramenta": "lookup_golden_record",
+      "argumentos": {
+        "isin": "BRRVBRACNOR9",
+        "ticker": "RVBR3",
+        "cnpj": "08.777.666/0001-33",
+        "emissor": "REDE VAREJO BRASIL S.A."
+      },
+      "resultado": {
+        "status": "ok",
+        "registro": {
+          "emissor": "Rede Varejo Brasil S.A.",
+          "cnpj": "08.777.666/0001-33",
+          "isin": "BRRVBRACNOR9",
+          "ticker": "RVBR3",
+          "classe": "ON",
+          "segmento_listagem": "Novo Mercado",
+          "status": "ativo"
+        },
+        "chaves_encontradas": [
+          "cnpj",
+          "emissor",
+          "isin",
+          "ticker"
+        ],
+        "chaves_nao_encontradas": [],
+        "isin_por_chave": {
+          "isin": "BRRVBRACNOR9",
+          "ticker": "BRRVBRACNOR9",
+          "cnpj": "BRRVBRACNOR9",
+          "emissor": "BRRVBRACNOR9"
+        },
+        "isin_digito_verificador_ok": false,
+        "classe_pelo_ticker": "ON"
+      }
+    },
+    {
+      "ferramenta": "validate_dates",
+      "argumentos": {
+        "tipo_evento": "jcp",
+        "data_aprovacao": "2026-06-09",
+        "data_com": "2026-06-23",
+        "data_ex": "2026-06-24",
+        "data_documento": "2026-06-09"
+      },
+      "resultado": {
+        "resultado": [
+          {
+            "regra": "datas.com_dia_util",
+            "resultado": "ok",
+            "severidade": "revisao",
+            "detalhe": "data com 2026-06-23 (Tue)"
+          },
+          {
+            "regra": "datas.com_antes_ex",
+            "resultado": "ok",
+            "severidade": "bloqueante",
+            "detalhe": "com 2026-06-23 < ex 2026-06-24"
+          },
+          {
+            "regra": "datas.ex_proximo_dia_util",
+            "resultado": "ok",
+            "severidade": "revisao",
+            "detalhe": "esperado 2026-06-24, informado 2026-06-24"
+          },
+          {
+            "regra": "datas.aprovacao_ate_com",
+            "resultado": "ok",
+            "severidade": "bloqueante",
+            "detalhe": "aprovação 2026-06-09 <= com 2026-06-23"
+          },
+          {
+            "regra": "datas.aprovacao_ate_documento",
+            "resultado": "ok",
+            "severidade": "revisao",
+            "detalhe": "aprovação 2026-06-09 <= documento 2026-06-09"
+          },
+          {
+            "regra": "datas.pagamento_ausente",
+            "resultado": "pendente",
+            "severidade": "info",
+            "detalhe": "data de pagamento não informada no aviso"
+          }
+        ]
+      }
+    },
+    {
+      "ferramenta": "check_gross_net",
+      "argumentos": {
+        "valor_bruto": "0.2050000000",
+        "aliquota_ir": "17.5",
+        "valor_liquido": "0.1691250000"
+      },
+      "resultado": {
+        "regra": "valores.bruto_liquido_ir",
+        "resultado": "ok",
+        "severidade": "bloqueante",
+        "detalhe": "0.2050000000 × (1 − 0.175) = 0.169125; informado 0.1691250000"
+      }
+    },
+    {
+      "ferramenta": "verificar_trecho",
+      "argumentos": {
+        "trecho": "Data de pagamento       A definir (vide aviso complementar)"
+      },
+      "resultado": {
+        "encontrado": true,
+        "linha": 34
+      }
+    },
+    {
+      "ferramenta": "verificar_trecho",
+      "argumentos": {
+        "trecho": "Valor bruto por ação ON R$ 0,2050000000"
+      },
+      "resultado": {
+        "encontrado": true,
+        "linha": 26
+      }
+    },
+    {
+      "ferramenta": "verificar_trecho",
+      "argumentos": {
+        "trecho": "Valor líquido por ação ON R$ 0,1691250000"
+      },
+      "resultado": {
+        "encontrado": true,
+        "linha": 29
+      }
+    }
+  ],
+  "extracao": {
+    "identificacao": {
+      "emissor": {
+        "valor": "Rede Varejo Brasil S.A.",
+        "trecho": "REDE  VAREJO BRASIL  S.A.",
+        "pagina": null
+      },
+      "cnpj": {
+        "valor": "08.777.666/0001-33",
+        "trecho": "CNPJ/ME nº 08.777.666/0001-33",
+        "pagina": null
+      },
+      "isin": {
+        "valor": "BRRVBRACNOR9",
+        "trecho": "RVBR3 (ISIN BRRVBRACNOR9)",
+        "pagina": null
+      },
+      "ticker": {
+        "valor": "RVBR3",
+        "trecho": "Código de negociação    RVBR3 (ISIN BRRVBRACNOR9)",
+        "pagina": null
+      },
+      "classe_acao": {
+        "valor": "ON",
+        "trecho": "Valor bruto por ação ON R$ 0,2050000000",
+        "pagina": null
+      }
+    },
+    "data_documento": {
+      "valor": "2026-06-09",
+      "trecho": "São Paulo (SP), 09 de junho de 2026.",
+      "pagina": null
+    },
+    "eventos": [
+      {
+        "tipo_evento": "jcp",
+        "justificativa_tipo": "Título e corpo falam em Juros sobre o Capital Próprio (JCP), com retenção de IRRF de 17,5% sobre o valor bruto e valor líquido por ação; data 'ex-JCP'.",
+        "rotulo_documento": {
+          "valor": "Juros sobre o Capital Próprio",
+          "trecho": "AVISO AOS ACIONISTAS — Juros sobre o Capital Próprio",
+          "pagina": null
+        },
+        "data_aprovacao": {
+          "valor": "2026-06-09",
+          "trecho": "o Conselho de Administração, em reunião realizada em 09 de\n         junho de 2026, aprovou",
+          "pagina": null
+        },
+        "data_com": {
+          "valor": "2026-06-23",
+          "trecho": "Data-base (“data com”)  23/06/2026",
+          "pagina": null
+        },
+        "data_ex": {
+          "valor": "2026-06-24",
+          "trecho": "Data “ex-JCP”           24/06/2026",
+          "pagina": null
+        },
+        "data_pagamento": {
+          "valor": null,
+          "trecho": "Data de pagamento       A definir (vide aviso complementar)",
+          "pagina": null
+        },
+        "moeda": {
+          "valor": "BRL",
+          "trecho": "Valor bruto por ação ON R$ 0,2050000000",
+          "pagina": null
+        },
+        "valor_bruto": {
+          "valor": "0.2050000000",
+          "trecho": "Valor bruto por ação ON R$ 0,2050000000",
+          "pagina": null
+        },
+        "aliquota_ir": {
+          "valor": "17.5",
+          "trecho": "IRRF na fonte           17,5%",
+          "pagina": null
+        },
+        "valor_liquido": {
+          "valor": "0.1691250000",
+          "trecho": "Valor líquido por ação ON R$ 0,1691250000",
+          "pagina": null
+        },
+        "proporcao": {
+          "valor": null,
+          "trecho": null,
+          "pagina": null
+        },
+        "percentual_bonificacao": {
+          "valor": null,
+          "trecho": null,
+          "pagina": null
+        },
+        "custo_atribuido": {
+          "valor": null,
+          "trecho": null,
+          "pagina": null
+        },
+        "observacoes": [
+          "Data de pagamento ainda não definida; será divulgada em aviso complementar. Pendente de acompanhamento antes de creditar.",
+          "Bruto × (1 − 17,5%) = 0,169125, confere com o líquido informado.",
+          "A ferramenta de golden record reportou isin_digito_verificador_ok = false para BRRVBRACNOR9; o ISIN foi mantido como está no documento, e os demais identificadores (ticker, CNPJ, emissor) apontam para o mesmo registro. Recomenda-se revisão manual do ISIN."
+        ]
+      }
+    ],
+    "transcricao": null
+  }
+}

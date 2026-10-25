@@ -1,0 +1,430 @@
+{
+  "documento": {
+    "arquivo": "04_rede_varejo_jcp_sem_data.pdf",
+    "sha256": "37f846a73cb5486b543bb1e580144c8d94eafee4aa7396424637c063a3bfbb83",
+    "paginas": 1,
+    "fonte": "texto_nativo"
+  },
+  "status": "aprovado_com_ressalvas",
+  "resumo_operador": "JCP RVBR3. Crédito em dinheiro: R$ 0,2050000000 bruto por ação, R$ 0,1691250000 líquido após IRRF de 17,5%. Data com 23/06/2026, ex 24/06/2026, pagamento/crédito não informada. Aprovado com pendências (ver 'pendencias').",
+  "identificacao": {
+    "emissor": {
+      "valor": "REDE VAREJO BRASIL S.A.",
+      "unidade": null,
+      "status": "extraido",
+      "confianca": "alta",
+      "motivos": [
+        "trecho localizado no PDF (pág. 1, linha 6)",
+        "confirmado por golden.identificacao"
+      ],
+      "evidencia": {
+        "trecho": "REDE  VAREJO BRASIL  S.A.",
+        "pagina": 1,
+        "linha": 6,
+        "verificada": true
+      }
+    },
+    "cnpj": {
+      "valor": "08.777.666/0001-33",
+      "unidade": null,
+      "status": "extraido",
+      "confianca": "alta",
+      "motivos": [
+        "trecho localizado no PDF (pág. 1, linha 7)",
+        "confirmado por golden.identificacao"
+      ],
+      "evidencia": {
+        "trecho": "CNPJ/ME nº 08.777.666/0001-33",
+        "pagina": 1,
+        "linha": 7,
+        "verificada": true
+      }
+    },
+    "isin": {
+      "valor": "BRRVBRACNOR9",
+      "unidade": null,
+      "status": "extraido",
+      "confianca": "alta",
+      "motivos": [
+        "trecho localizado no PDF (pág. 1, linha 36)",
+        "confirmado por golden.identificacao"
+      ],
+      "evidencia": {
+        "trecho": "ISIN BRRVBRACNOR9",
+        "pagina": 1,
+        "linha": 36,
+        "verificada": true
+      }
+    },
+    "ticker": {
+      "valor": "RVBR3",
+      "unidade": null,
+      "status": "extraido",
+      "confianca": "alta",
+      "motivos": [
+        "trecho localizado no PDF (pág. 1, linha 36)",
+        "confirmado por golden.identificacao"
+      ],
+      "evidencia": {
+        "trecho": "Código de negociação    RVBR3",
+        "pagina": 1,
+        "linha": 36,
+        "verificada": true
+      }
+    },
+    "classe_acao": {
+      "valor": "ON",
+      "unidade": null,
+      "status": "extraido",
+      "confianca": "alta",
+      "motivos": [
+        "trecho localizado no PDF (pág. 1, linha 26)",
+        "confirmado por golden.classe"
+      ],
+      "evidencia": {
+        "trecho": "Valor bruto por ação ON",
+        "pagina": 1,
+        "linha": 26,
+        "verificada": true
+      }
+    }
+  },
+  "data_documento": {
+    "valor": "2026-06-09",
+    "unidade": null,
+    "status": "extraido",
+    "confianca": "alta",
+    "motivos": [
+      "trecho localizado no PDF (pág. 1, linha 39)",
+      "valor aparece 2x no documento (corpo e tabela concordam)"
+    ],
+    "evidencia": {
+      "trecho": "São Paulo (SP), 09 de junho de 2026.",
+      "pagina": 1,
+      "linha": 39,
+      "verificada": true
+    }
+  },
+  "validacao_golden": {
+    "status": "ok",
+    "registro": {
+      "emissor": "Rede Varejo Brasil S.A.",
+      "cnpj": "08.777.666/0001-33",
+      "isin": "BRRVBRACNOR9",
+      "ticker": "RVBR3",
+      "classe": "ON",
+      "segmento_listagem": "Novo Mercado",
+      "status": "ativo"
+    },
+    "chaves_encontradas": [
+      "cnpj",
+      "emissor",
+      "isin",
+      "ticker"
+    ],
+    "chaves_nao_encontradas": []
+  },
+  "eventos": [
+    {
+      "tipo": {
+        "valor": "jcp",
+        "unidade": null,
+        "status": "extraido",
+        "confianca": "alta",
+        "motivos": [
+          "LLM: O aviso trata expressamente de Juros sobre o Capital Próprio (JCP), com retenção de IRRF de 17,5% na fonte e valores bruto e líquido por ação informados."
+        ],
+        "evidencia": null
+      },
+      "rotulo_documento": "AVISO AOS ACIONISTAS — Juros sobre o Capital Próprio",
+      "efeito": "Crédito em dinheiro: R$ 0,2050000000 bruto por ação, R$ 0,1691250000 líquido após IRRF de 17,5%",
+      "campos": {
+        "data_aprovacao": {
+          "valor": "2026-06-09",
+          "unidade": null,
+          "status": "extraido",
+          "confianca": "alta",
+          "motivos": [
+            "trecho localizado no PDF (pág. 1, linha 13)",
+            "valor aparece 2x no documento (corpo e tabela concordam)"
+          ],
+          "evidencia": {
+            "trecho": "reunião realizada em 09 de junho de 2026",
+            "pagina": 1,
+            "linha": 13,
+            "verificada": true
+          }
+        },
+        "data_com": {
+          "valor": "2026-06-23",
+          "unidade": null,
+          "status": "extraido",
+          "confianca": "alta",
+          "motivos": [
+            "trecho localizado no PDF (pág. 1, linha 31)",
+            "valor aparece 2x no documento (corpo e tabela concordam)",
+            "confirmado por datas.ex_proximo_dia_util"
+          ],
+          "evidencia": {
+            "trecho": "Data-base (“data com”)  23/06/2026",
+            "pagina": 1,
+            "linha": 31,
+            "verificada": true
+          }
+        },
+        "data_ex": {
+          "valor": "2026-06-24",
+          "unidade": null,
+          "status": "extraido",
+          "confianca": "alta",
+          "motivos": [
+            "trecho localizado no PDF (pág. 1, linha 33)",
+            "valor aparece 2x no documento (corpo e tabela concordam)",
+            "confirmado por datas.ex_proximo_dia_util"
+          ],
+          "evidencia": {
+            "trecho": "Data “ex-JCP”           24/06/2026",
+            "pagina": 1,
+            "linha": 33,
+            "verificada": true
+          }
+        },
+        "data_pagamento": {
+          "valor": null,
+          "unidade": null,
+          "status": "ausente_no_documento",
+          "confianca": "alta",
+          "motivos": [
+            "o documento declara que a informação não está disponível"
+          ],
+          "evidencia": {
+            "trecho": "Data de pagamento       A definir (vide aviso complementar)",
+            "pagina": 1,
+            "linha": 34,
+            "verificada": true
+          }
+        },
+        "moeda": {
+          "valor": "BRL",
+          "unidade": null,
+          "status": "extraido",
+          "confianca": "alta",
+          "motivos": [
+            "trecho localizado no PDF (pág. 1, linha 26)",
+            "confirmado por valores.moeda_vs_isin"
+          ],
+          "evidencia": {
+            "trecho": "Valor bruto por ação ON R$ 0,2050000000",
+            "pagina": 1,
+            "linha": 26,
+            "verificada": true
+          }
+        },
+        "valor_bruto": {
+          "valor": "0.2050000000",
+          "unidade": "BRL/acao",
+          "status": "extraido",
+          "confianca": "alta",
+          "motivos": [
+            "trecho localizado no PDF (pág. 1, linha 26)",
+            "confirmado por valores.bruto_liquido_ir"
+          ],
+          "evidencia": {
+            "trecho": "Valor bruto por ação ON R$ 0,2050000000",
+            "pagina": 1,
+            "linha": 26,
+            "verificada": true
+          }
+        },
+        "aliquota_ir": {
+          "valor": "17.5",
+          "unidade": "%",
+          "status": "extraido",
+          "confianca": "alta",
+          "motivos": [
+            "trecho localizado no PDF (pág. 1, linha 28)",
+            "valor aparece 2x no documento (corpo e tabela concordam)",
+            "confirmado por valores.bruto_liquido_ir"
+          ],
+          "evidencia": {
+            "trecho": "IRRF na fonte           17,5%",
+            "pagina": 1,
+            "linha": 28,
+            "verificada": true
+          }
+        },
+        "valor_liquido": {
+          "valor": "0.1691250000",
+          "unidade": "BRL/acao",
+          "status": "extraido",
+          "confianca": "alta",
+          "motivos": [
+            "trecho localizado no PDF (pág. 1, linha 29)",
+            "confirmado por valores.bruto_liquido_ir"
+          ],
+          "evidencia": {
+            "trecho": "Valor líquido por ação ON R$ 0,1691250000",
+            "pagina": 1,
+            "linha": 29,
+            "verificada": true
+          }
+        },
+        "proporcao": {
+          "valor": null,
+          "unidade": null,
+          "status": "nao_aplicavel",
+          "confianca": null,
+          "motivos": [],
+          "evidencia": null
+        },
+        "percentual_bonificacao": {
+          "valor": null,
+          "unidade": null,
+          "status": "nao_aplicavel",
+          "confianca": null,
+          "motivos": [],
+          "evidencia": null
+        },
+        "custo_atribuido": {
+          "valor": null,
+          "unidade": null,
+          "status": "nao_aplicavel",
+          "confianca": null,
+          "motivos": [],
+          "evidencia": null
+        }
+      },
+      "observacoes": [
+        "A data de pagamento não foi fixada no aviso, constando expressamente como 'A definir (vide aviso complementar)'.",
+        "A data de pagamento será oportunamente divulgada por meio de Aviso aos Acionistas complementar após conclusão dos procedimentos operacionais junto à instituição depositária."
+      ]
+    }
+  ],
+  "revisao_humana": [],
+  "pendencias": [
+    "eventos[0].data_pagamento: não informado no aviso (\"Data de pagamento       A definir (vide aviso complementar)\")"
+  ],
+  "verificacoes": [
+    {
+      "regra": "golden.identificacao",
+      "resultado": "ok",
+      "severidade": "bloqueante",
+      "detalhe": "cnpj, emissor, isin, ticker apontam para BRRVBRACNOR9",
+      "campos": [
+        "identificacao.isin",
+        "identificacao.ticker",
+        "identificacao.cnpj",
+        "identificacao.emissor"
+      ]
+    },
+    {
+      "regra": "golden.classe",
+      "resultado": "ok",
+      "severidade": "revisao",
+      "detalhe": "documento ON, base ON",
+      "campos": [
+        "identificacao.classe_acao"
+      ]
+    },
+    {
+      "regra": "isin.digito_verificador",
+      "resultado": "falha",
+      "severidade": "info",
+      "detalhe": "dígito verificador ISO 6166 não confere (esperado no lote sintético)",
+      "campos": []
+    },
+    {
+      "regra": "datas.com_dia_util",
+      "resultado": "ok",
+      "severidade": "revisao",
+      "detalhe": "data com 2026-06-23 (Tue)",
+      "campos": [
+        "eventos[0].data_com"
+      ]
+    },
+    {
+      "regra": "datas.com_antes_ex",
+      "resultado": "ok",
+      "severidade": "bloqueante",
+      "detalhe": "com 2026-06-23 < ex 2026-06-24",
+      "campos": [
+        "eventos[0].data_com",
+        "eventos[0].data_ex"
+      ]
+    },
+    {
+      "regra": "datas.ex_proximo_dia_util",
+      "resultado": "ok",
+      "severidade": "revisao",
+      "detalhe": "esperado 2026-06-24, informado 2026-06-24",
+      "campos": [
+        "eventos[0].data_com",
+        "eventos[0].data_ex"
+      ]
+    },
+    {
+      "regra": "datas.aprovacao_ate_com",
+      "resultado": "ok",
+      "severidade": "bloqueante",
+      "detalhe": "aprovação 2026-06-09 <= com 2026-06-23",
+      "campos": [
+        "eventos[0].data_aprovacao",
+        "eventos[0].data_com"
+      ]
+    },
+    {
+      "regra": "datas.aprovacao_ate_documento",
+      "resultado": "ok",
+      "severidade": "revisao",
+      "detalhe": "aprovação 2026-06-09 <= documento 2026-06-09",
+      "campos": [
+        "eventos[0].data_aprovacao",
+        "data_documento"
+      ]
+    },
+    {
+      "regra": "datas.pagamento_ausente",
+      "resultado": "pendente",
+      "severidade": "info",
+      "detalhe": "data de pagamento não informada no aviso",
+      "campos": [
+        "eventos[0].data_pagamento"
+      ]
+    },
+    {
+      "regra": "valores.moeda_vs_isin",
+      "resultado": "ok",
+      "severidade": "revisao",
+      "detalhe": "moeda BRL, ISIN BR",
+      "campos": [
+        "eventos[0].moeda"
+      ]
+    },
+    {
+      "regra": "valores.bruto_liquido_ir",
+      "resultado": "ok",
+      "severidade": "bloqueante",
+      "detalhe": "0.2050000000 × (1 − 0.175) = 0.169125; informado 0.1691250000",
+      "campos": [
+        "eventos[0].valor_bruto",
+        "eventos[0].aliquota_ir",
+        "eventos[0].valor_liquido"
+      ]
+    },
+    {
+      "regra": "classificacao.palavras_chave",
+      "resultado": "ok",
+      "severidade": "bloqueante",
+      "detalhe": "LLM: jcp; regras por palavra-chave: jcp",
+      "campos": [
+        "eventos[0].tipo"
+      ]
+    }
+  ],
+  "auditoria": {
+    "modelo": "gemini/gemini-3.8-flash",
+    "prompt_versao": "v1",
+    "processado_em": "2026-10-24T23:17:36",
+    "resposta_llm_cache": "cache/llm/04_rede_varejo_jcp_sem_data.37f846a73cb5.v1.gemini.json"
+  }
+}

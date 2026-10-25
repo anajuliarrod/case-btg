@@ -1,0 +1,409 @@
+{
+  "documento": {
+    "arquivo": "01_energetica_vale_tiete_dividendo.pdf",
+    "sha256": "e49afdf81d2a1e4a74985e78fa0ea3639633cfa19f5dba633a2b545d115153cb",
+    "paginas": 1,
+    "fonte": "texto_nativo"
+  },
+  "status": "aprovado",
+  "resumo_operador": "Dividendo TIET3. Crédito em dinheiro: R$ 0,4275000000 bruto por ação; líquido depende do beneficiário (sem alíquota uniforme por ação). Data com 12/06/2026, ex 15/06/2026, pagamento/crédito 03/07/2026. Aprovado.",
+  "identificacao": {
+    "emissor": {
+      "valor": "ENERGÉTICA VALE DO TIETÊ S.A.",
+      "unidade": null,
+      "status": "extraido",
+      "confianca": "alta",
+      "motivos": [
+        "trecho localizado no PDF (pág. 1, linha 6)",
+        "confirmado por golden.identificacao"
+      ],
+      "evidencia": {
+        "trecho": "ENERGÉTICA  VALE  DO TIETÊ S.A.",
+        "pagina": 1,
+        "linha": 6,
+        "verificada": true
+      }
+    },
+    "cnpj": {
+      "valor": "12.345.678/0001-90",
+      "unidade": null,
+      "status": "extraido",
+      "confianca": "alta",
+      "motivos": [
+        "trecho localizado no PDF (pág. 1, linha 7)",
+        "confirmado por golden.identificacao"
+      ],
+      "evidencia": {
+        "trecho": "CNPJ/ME nº 12.345.678/0001-90",
+        "pagina": 1,
+        "linha": 7,
+        "verificada": true
+      }
+    },
+    "isin": {
+      "valor": "BRTIETACNOR3",
+      "unidade": null,
+      "status": "extraido",
+      "confianca": "alta",
+      "motivos": [
+        "trecho localizado no PDF (pág. 1, linha 38)",
+        "confirmado por golden.identificacao"
+      ],
+      "evidencia": {
+        "trecho": "Código de negociação    TIET3 (ISIN BRTIETACNOR3)",
+        "pagina": 1,
+        "linha": 38,
+        "verificada": true
+      }
+    },
+    "ticker": {
+      "valor": "TIET3",
+      "unidade": null,
+      "status": "extraido",
+      "confianca": "alta",
+      "motivos": [
+        "trecho localizado no PDF (pág. 1, linha 38)",
+        "confirmado por golden.identificacao"
+      ],
+      "evidencia": {
+        "trecho": "Código de negociação    TIET3 (ISIN BRTIETACNOR3)",
+        "pagina": 1,
+        "linha": 38,
+        "verificada": true
+      }
+    },
+    "classe_acao": {
+      "valor": "ON",
+      "unidade": null,
+      "status": "extraido",
+      "confianca": "alta",
+      "motivos": [
+        "trecho localizado no PDF (pág. 1, linha 28)",
+        "confirmado por golden.classe"
+      ],
+      "evidencia": {
+        "trecho": "Valor bruto por ação ordinária R$ 0,4275000000\n                                                                                  \n         (ON)",
+        "pagina": 1,
+        "linha": 28,
+        "verificada": true
+      }
+    }
+  },
+  "data_documento": {
+    "valor": "2026-05-28",
+    "unidade": null,
+    "status": "extraido",
+    "confianca": "alta",
+    "motivos": [
+      "trecho localizado no PDF (pág. 1, linha 40)",
+      "valor aparece 3x no documento (corpo e tabela concordam)"
+    ],
+    "evidencia": {
+      "trecho": "São Paulo (SP), 28 de maio de 2026.",
+      "pagina": 1,
+      "linha": 40,
+      "verificada": true
+    }
+  },
+  "validacao_golden": {
+    "status": "ok",
+    "registro": {
+      "emissor": "Energética Vale do Tietê S.A.",
+      "cnpj": "12.345.678/0001-90",
+      "isin": "BRTIETACNOR3",
+      "ticker": "TIET3",
+      "classe": "ON",
+      "segmento_listagem": "Novo Mercado",
+      "status": "ativo"
+    },
+    "chaves_encontradas": [
+      "cnpj",
+      "emissor",
+      "isin",
+      "ticker"
+    ],
+    "chaves_nao_encontradas": []
+  },
+  "eventos": [
+    {
+      "tipo": {
+        "valor": "dividendo",
+        "unidade": null,
+        "status": "extraido",
+        "confianca": "alta",
+        "motivos": [
+          "LLM: O documento comunica explicitamente a aprovação e distribuição de dividendos referentes ao resultado do exercício social encerrado em 31 de dezembro de 2025, sem retenção uniforme de IRRF por ação."
+        ],
+        "evidencia": null
+      },
+      "rotulo_documento": "AVISO AOS ACIONISTAS — Pagamento de Dividendos",
+      "efeito": "Crédito em dinheiro: R$ 0,4275000000 bruto por ação; líquido depende do beneficiário (sem alíquota uniforme por ação)",
+      "campos": {
+        "data_aprovacao": {
+          "valor": "2026-05-28",
+          "unidade": null,
+          "status": "extraido",
+          "confianca": "alta",
+          "motivos": [
+            "trecho localizado no PDF (pág. 1, linha 31)",
+            "valor aparece 3x no documento (corpo e tabela concordam)"
+          ],
+          "evidencia": {
+            "trecho": "Data de aprovação (RCA) 28/05/2026",
+            "pagina": 1,
+            "linha": 31,
+            "verificada": true
+          }
+        },
+        "data_com": {
+          "valor": "2026-06-12",
+          "unidade": null,
+          "status": "extraido",
+          "confianca": "alta",
+          "motivos": [
+            "trecho localizado no PDF (pág. 1, linha 33)",
+            "valor aparece 2x no documento (corpo e tabela concordam)",
+            "confirmado por datas.ex_proximo_dia_util"
+          ],
+          "evidencia": {
+            "trecho": "Data-base (“data com”)  12/06/2026",
+            "pagina": 1,
+            "linha": 33,
+            "verificada": true
+          }
+        },
+        "data_ex": {
+          "valor": "2026-06-15",
+          "unidade": null,
+          "status": "extraido",
+          "confianca": "alta",
+          "motivos": [
+            "trecho localizado no PDF (pág. 1, linha 34)",
+            "valor aparece 2x no documento (corpo e tabela concordam)",
+            "confirmado por datas.ex_proximo_dia_util"
+          ],
+          "evidencia": {
+            "trecho": "Data “ex-dividendos”    15/06/2026",
+            "pagina": 1,
+            "linha": 34,
+            "verificada": true
+          }
+        },
+        "data_pagamento": {
+          "valor": "2026-07-03",
+          "unidade": null,
+          "status": "extraido",
+          "confianca": "alta",
+          "motivos": [
+            "trecho localizado no PDF (pág. 1, linha 36)"
+          ],
+          "evidencia": {
+            "trecho": "Data de pagamento       03/07/2026",
+            "pagina": 1,
+            "linha": 36,
+            "verificada": true
+          }
+        },
+        "moeda": {
+          "valor": "BRL",
+          "unidade": null,
+          "status": "extraido",
+          "confianca": "alta",
+          "motivos": [
+            "trecho localizado no PDF (pág. 1, linha 28)",
+            "confirmado por valores.moeda_vs_isin"
+          ],
+          "evidencia": {
+            "trecho": "Valor bruto por ação ordinária R$ 0,4275000000",
+            "pagina": 1,
+            "linha": 28,
+            "verificada": true
+          }
+        },
+        "valor_bruto": {
+          "valor": "0.4275000000",
+          "unidade": "BRL/acao",
+          "status": "extraido",
+          "confianca": "alta",
+          "motivos": [
+            "trecho localizado no PDF (pág. 1, linha 28)"
+          ],
+          "evidencia": {
+            "trecho": "Valor bruto por ação ordinária R$ 0,4275000000",
+            "pagina": 1,
+            "linha": 28,
+            "verificada": true
+          }
+        },
+        "aliquota_ir": {
+          "valor": null,
+          "unidade": "%",
+          "status": "nao_encontrado",
+          "confianca": null,
+          "motivos": [],
+          "evidencia": null
+        },
+        "valor_liquido": {
+          "valor": null,
+          "unidade": "BRL/acao",
+          "status": "nao_encontrado",
+          "confianca": null,
+          "motivos": [],
+          "evidencia": null
+        },
+        "proporcao": {
+          "valor": null,
+          "unidade": null,
+          "status": "nao_aplicavel",
+          "confianca": null,
+          "motivos": [],
+          "evidencia": null
+        },
+        "percentual_bonificacao": {
+          "valor": null,
+          "unidade": null,
+          "status": "nao_aplicavel",
+          "confianca": null,
+          "motivos": [],
+          "evidencia": null
+        },
+        "custo_atribuido": {
+          "valor": null,
+          "unidade": null,
+          "status": "nao_aplicavel",
+          "confianca": null,
+          "motivos": [],
+          "evidencia": null
+        }
+      },
+      "observacoes": [
+        "Nos termos da legislação tributária vigente a partir de 1º de janeiro de 2026, os dividendos estarão sujeitos à retenção de Imposto de Renda na Fonte (IRRF) à alíquota de 10% sobre a parcela que exceder R$ 50.000,00 mensais por beneficiário pagos por esta Companhia."
+      ]
+    }
+  ],
+  "revisao_humana": [],
+  "pendencias": [],
+  "verificacoes": [
+    {
+      "regra": "golden.identificacao",
+      "resultado": "ok",
+      "severidade": "bloqueante",
+      "detalhe": "cnpj, emissor, isin, ticker apontam para BRTIETACNOR3",
+      "campos": [
+        "identificacao.isin",
+        "identificacao.ticker",
+        "identificacao.cnpj",
+        "identificacao.emissor"
+      ]
+    },
+    {
+      "regra": "golden.classe",
+      "resultado": "ok",
+      "severidade": "revisao",
+      "detalhe": "documento ON, base ON",
+      "campos": [
+        "identificacao.classe_acao"
+      ]
+    },
+    {
+      "regra": "isin.digito_verificador",
+      "resultado": "falha",
+      "severidade": "info",
+      "detalhe": "dígito verificador ISO 6166 não confere (esperado no lote sintético)",
+      "campos": []
+    },
+    {
+      "regra": "datas.com_dia_util",
+      "resultado": "ok",
+      "severidade": "revisao",
+      "detalhe": "data com 2026-06-12 (Fri)",
+      "campos": [
+        "eventos[0].data_com"
+      ]
+    },
+    {
+      "regra": "datas.com_antes_ex",
+      "resultado": "ok",
+      "severidade": "bloqueante",
+      "detalhe": "com 2026-06-12 < ex 2026-06-15",
+      "campos": [
+        "eventos[0].data_com",
+        "eventos[0].data_ex"
+      ]
+    },
+    {
+      "regra": "datas.ex_proximo_dia_util",
+      "resultado": "ok",
+      "severidade": "revisao",
+      "detalhe": "esperado 2026-06-15, informado 2026-06-15",
+      "campos": [
+        "eventos[0].data_com",
+        "eventos[0].data_ex"
+      ]
+    },
+    {
+      "regra": "datas.aprovacao_ate_com",
+      "resultado": "ok",
+      "severidade": "bloqueante",
+      "detalhe": "aprovação 2026-05-28 <= com 2026-06-12",
+      "campos": [
+        "eventos[0].data_aprovacao",
+        "eventos[0].data_com"
+      ]
+    },
+    {
+      "regra": "datas.aprovacao_ate_documento",
+      "resultado": "ok",
+      "severidade": "revisao",
+      "detalhe": "aprovação 2026-05-28 <= documento 2026-05-28",
+      "campos": [
+        "eventos[0].data_aprovacao",
+        "data_documento"
+      ]
+    },
+    {
+      "regra": "datas.pagamento_apos_com",
+      "resultado": "ok",
+      "severidade": "bloqueante",
+      "detalhe": "pagamento 2026-07-03 > com 2026-06-12",
+      "campos": [
+        "eventos[0].data_pagamento",
+        "eventos[0].data_com"
+      ]
+    },
+    {
+      "regra": "datas.pagamento_apos_ex",
+      "resultado": "ok",
+      "severidade": "revisao",
+      "detalhe": "pagamento 2026-07-03 >= ex 2026-06-15",
+      "campos": [
+        "eventos[0].data_pagamento",
+        "eventos[0].data_ex"
+      ]
+    },
+    {
+      "regra": "valores.moeda_vs_isin",
+      "resultado": "ok",
+      "severidade": "revisao",
+      "detalhe": "moeda BRL, ISIN BR",
+      "campos": [
+        "eventos[0].moeda"
+      ]
+    },
+    {
+      "regra": "classificacao.palavras_chave",
+      "resultado": "ok",
+      "severidade": "bloqueante",
+      "detalhe": "LLM: dividendo; regras por palavra-chave: dividendo",
+      "campos": [
+        "eventos[0].tipo"
+      ]
+    }
+  ],
+  "auditoria": {
+    "modelo": "gemini/gemini-3.8-flash",
+    "prompt_versao": "v1",
+    "processado_em": "2026-10-24T23:10:25",
+    "resposta_llm_cache": "cache/llm/01_energetica_vale_tiete_dividendo.e49afdf81d2a.v1.gemini.json"
+  }
+}

@@ -1,0 +1,255 @@
+{
+  "arquivo": "02_banco_meridional_jcp.pdf",
+  "sha256": "64e0787afd32c0d99e5407a5fbc6f5048245ba70826563d0b14205074b970668",
+  "prompt_versao": "v1",
+  "provider": "claude",
+  "modelo": "claude-sonnet-5-5",
+  "processado_em": "2026-10-21T22:41:06",
+  "chamadas_ferramentas": [
+    {
+      "ferramenta": "lookup_golden_record",
+      "argumentos": {
+        "isin": "BRBMRDACNPR7",
+        "ticker": "BMRD4",
+        "cnpj": "60.111.222/0001-55",
+        "emissor": "Banco Meridional do Brasil S.A."
+      },
+      "resultado": {
+        "status": "ok",
+        "registro": {
+          "emissor": "Banco Meridional do Brasil S.A.",
+          "cnpj": "60.111.222/0001-55",
+          "isin": "BRBMRDACNPR7",
+          "ticker": "BMRD4",
+          "classe": "PN",
+          "segmento_listagem": "Nível 1",
+          "status": "ativo"
+        },
+        "chaves_encontradas": [
+          "cnpj",
+          "emissor",
+          "isin",
+          "ticker"
+        ],
+        "chaves_nao_encontradas": [],
+        "isin_por_chave": {
+          "isin": "BRBMRDACNPR7",
+          "ticker": "BRBMRDACNPR7",
+          "cnpj": "BRBMRDACNPR7",
+          "emissor": "BRBMRDACNPR7"
+        },
+        "isin_digito_verificador_ok": false,
+        "classe_pelo_ticker": "PN"
+      }
+    },
+    {
+      "ferramenta": "validate_dates",
+      "argumentos": {
+        "tipo_evento": "jcp",
+        "data_aprovacao": "2026-06-02",
+        "data_com": "2026-06-16",
+        "data_ex": "2026-06-17",
+        "data_pagamento": "2026-08-14",
+        "data_documento": "2026-06-02"
+      },
+      "resultado": {
+        "resultado": [
+          {
+            "regra": "datas.com_dia_util",
+            "resultado": "ok",
+            "severidade": "revisao",
+            "detalhe": "data com 2026-06-16 (Tue)"
+          },
+          {
+            "regra": "datas.com_antes_ex",
+            "resultado": "ok",
+            "severidade": "bloqueante",
+            "detalhe": "com 2026-06-16 < ex 2026-06-17"
+          },
+          {
+            "regra": "datas.ex_proximo_dia_util",
+            "resultado": "ok",
+            "severidade": "revisao",
+            "detalhe": "esperado 2026-06-17, informado 2026-06-17"
+          },
+          {
+            "regra": "datas.aprovacao_ate_com",
+            "resultado": "ok",
+            "severidade": "bloqueante",
+            "detalhe": "aprovação 2026-06-02 <= com 2026-06-16"
+          },
+          {
+            "regra": "datas.aprovacao_ate_documento",
+            "resultado": "ok",
+            "severidade": "revisao",
+            "detalhe": "aprovação 2026-06-02 <= documento 2026-06-02"
+          },
+          {
+            "regra": "datas.pagamento_apos_com",
+            "resultado": "ok",
+            "severidade": "bloqueante",
+            "detalhe": "pagamento 2026-08-14 > com 2026-06-16"
+          },
+          {
+            "regra": "datas.pagamento_apos_ex",
+            "resultado": "ok",
+            "severidade": "revisao",
+            "detalhe": "pagamento 2026-08-14 >= ex 2026-06-17"
+          }
+        ]
+      }
+    },
+    {
+      "ferramenta": "check_gross_net",
+      "argumentos": {
+        "valor_bruto": "0.1738420000",
+        "aliquota_ir": "17.5",
+        "valor_liquido": "0.1434196500"
+      },
+      "resultado": {
+        "regra": "valores.bruto_liquido_ir",
+        "resultado": "ok",
+        "severidade": "bloqueante",
+        "detalhe": "0.1738420000 × (1 − 0.175) = 0.14341965; informado 0.1434196500"
+      }
+    },
+    {
+      "ferramenta": "verificar_trecho",
+      "argumentos": {
+        "trecho": "Data de pagamento       14/08/2026"
+      },
+      "resultado": {
+        "encontrado": true,
+        "linha": 37
+      }
+    },
+    {
+      "ferramenta": "verificar_trecho",
+      "argumentos": {
+        "trecho": "Valor líquido por ação (PN) R$ 0,1434196500"
+      },
+      "resultado": {
+        "encontrado": true,
+        "linha": 32
+      }
+    },
+    {
+      "ferramenta": "verificar_trecho",
+      "argumentos": {
+        "trecho": "Código de negociação    BMRD4 (ISIN BRBMRDACNPR7)"
+      },
+      "resultado": {
+        "encontrado": true,
+        "linha": 38
+      }
+    }
+  ],
+  "extracao": {
+    "identificacao": {
+      "emissor": {
+        "valor": "Banco Meridional do Brasil S.A.",
+        "trecho": "BANCO  MERIDIONAL  DO BRASIL S.A.",
+        "pagina": null
+      },
+      "cnpj": {
+        "valor": "60.111.222/0001-55",
+        "trecho": "CNPJ/ME nº 60.111.222/0001-55",
+        "pagina": null
+      },
+      "isin": {
+        "valor": "BRBMRDACNPR7",
+        "trecho": "Código de negociação    BMRD4 (ISIN BRBMRDACNPR7)",
+        "pagina": null
+      },
+      "ticker": {
+        "valor": "BMRD4",
+        "trecho": "Código de negociação    BMRD4 (ISIN BRBMRDACNPR7)",
+        "pagina": null
+      },
+      "classe_acao": {
+        "valor": "PN",
+        "trecho": "Valor bruto por ação preferencial R$ 0,1738420000",
+        "pagina": null
+      }
+    },
+    "data_documento": {
+      "valor": "2026-06-02",
+      "trecho": "São Paulo (SP), 02 de junho de 2026.",
+      "pagina": null
+    },
+    "eventos": [
+      {
+        "tipo_evento": "jcp",
+        "justificativa_tipo": "Aviso trata de Juros sobre o Capital Próprio, com base no art. 9º da Lei nº 9.249/95, IRRF de 17,5% sobre o valor bruto e valor líquido por ação. A imputação aos dividendos obrigatórios não o torna dividendo.",
+        "rotulo_documento": {
+          "valor": "Juros sobre o Capital Próprio (JCP)",
+          "trecho": "AVISO AOS ACIONISTAS — Juros sobre o Capital Próprio (JCP)",
+          "pagina": null
+        },
+        "data_aprovacao": {
+          "valor": "2026-06-02",
+          "trecho": "em reunião realizada em 02 de junho de 2026, aprovou o crédito de Juros sobre o Capital",
+          "pagina": null
+        },
+        "data_com": {
+          "valor": "2026-06-16",
+          "trecho": "Data-base (“data com”)  16/06/2026",
+          "pagina": null
+        },
+        "data_ex": {
+          "valor": "2026-06-17",
+          "trecho": "Data “ex-JCP”           17/06/2026",
+          "pagina": null
+        },
+        "data_pagamento": {
+          "valor": "2026-08-14",
+          "trecho": "Data de pagamento       14/08/2026",
+          "pagina": null
+        },
+        "moeda": {
+          "valor": "BRL",
+          "trecho": "Valor bruto por ação preferencial R$ 0,1738420000",
+          "pagina": null
+        },
+        "valor_bruto": {
+          "valor": "0.1738420000",
+          "trecho": "Valor bruto por ação preferencial R$ 0,1738420000",
+          "pagina": null
+        },
+        "aliquota_ir": {
+          "valor": "17.5",
+          "trecho": "IRRF na fonte           17,5%",
+          "pagina": null
+        },
+        "valor_liquido": {
+          "valor": "0.1434196500",
+          "trecho": "Valor líquido por ação (PN) R$ 0,1434196500",
+          "pagina": null
+        },
+        "proporcao": {
+          "valor": null,
+          "trecho": null,
+          "pagina": null
+        },
+        "percentual_bonificacao": {
+          "valor": null,
+          "trecho": null,
+          "pagina": null
+        },
+        "custo_atribuido": {
+          "valor": null,
+          "trecho": null,
+          "pagina": null
+        },
+        "observacoes": [
+          "JCP imputado aos dividendos obrigatórios do exercício de 2026.",
+          "IRRF de 17,5% ressalvados os acionistas comprovadamente imunes ou isentos.",
+          "Líquido confere com bruto × (1 − 17,5%) = 0,14341965.",
+          "Ferramenta de validação sinalizou dígito verificador do ISIN BRBMRDACNPR7 como inválido (isin_digito_verificador_ok=false), embora o ISIN conste no documento e na base de referência; mantido o valor do documento, recomenda-se revisão manual.",
+          "Datas coerentes: aprovação ≤ data com < data ex < pagamento."
+        ]
+      }
+    ],
+    "transcricao": null
+  }
+}

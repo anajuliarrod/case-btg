@@ -1,0 +1,269 @@
+{
+  "arquivo": "03_siderurgica_paranaense_proventos.pdf",
+  "sha256": "a21a294ac3ededbb6fdef195be0edb0572069544e0b73f6fc1918fa77d6b0e85",
+  "prompt_versao": "v1",
+  "provider": "claude",
+  "modelo": "claude-sonnet-5-5",
+  "processado_em": "2026-10-21T22:40:23",
+  "chamadas_ferramentas": [
+    {
+      "ferramenta": "lookup_golden_record",
+      "argumentos": {
+        "isin": "BRCSPRACNOR1",
+        "ticker": "CSPR3",
+        "cnpj": "76.543.210/0001-12",
+        "emissor": "COMPANHIA SIDERÚRGICA PARANAENSE S.A."
+      },
+      "resultado": {
+        "status": "ok",
+        "registro": {
+          "emissor": "Companhia Siderúrgica Paranaense S.A.",
+          "cnpj": "76.543.210/0001-12",
+          "isin": "BRCSPRACNOR1",
+          "ticker": "CSPR3",
+          "classe": "ON",
+          "segmento_listagem": "Novo Mercado",
+          "status": "ativo"
+        },
+        "chaves_encontradas": [
+          "cnpj",
+          "emissor",
+          "isin",
+          "ticker"
+        ],
+        "chaves_nao_encontradas": [],
+        "isin_por_chave": {
+          "isin": "BRCSPRACNOR1",
+          "ticker": "BRCSPRACNOR1",
+          "cnpj": "BRCSPRACNOR1",
+          "emissor": "BRCSPRACNOR1"
+        },
+        "isin_digito_verificador_ok": false,
+        "classe_pelo_ticker": "ON"
+      }
+    },
+    {
+      "ferramenta": "validate_dates",
+      "argumentos": {
+        "tipo_evento": "jcp",
+        "data_aprovacao": "2026-06-05",
+        "data_com": "2026-06-19",
+        "data_ex": "2026-06-22",
+        "data_pagamento": "2026-09-11",
+        "data_documento": "2026-06-05"
+      },
+      "resultado": {
+        "resultado": [
+          {
+            "regra": "datas.com_dia_util",
+            "resultado": "ok",
+            "severidade": "revisao",
+            "detalhe": "data com 2026-06-19 (Fri)"
+          },
+          {
+            "regra": "datas.com_antes_ex",
+            "resultado": "ok",
+            "severidade": "bloqueante",
+            "detalhe": "com 2026-06-19 < ex 2026-06-22"
+          },
+          {
+            "regra": "datas.ex_proximo_dia_util",
+            "resultado": "ok",
+            "severidade": "revisao",
+            "detalhe": "esperado 2026-06-22, informado 2026-06-22"
+          },
+          {
+            "regra": "datas.aprovacao_ate_com",
+            "resultado": "ok",
+            "severidade": "bloqueante",
+            "detalhe": "aprovação 2026-06-05 <= com 2026-06-19"
+          },
+          {
+            "regra": "datas.aprovacao_ate_documento",
+            "resultado": "ok",
+            "severidade": "revisao",
+            "detalhe": "aprovação 2026-06-05 <= documento 2026-06-05"
+          },
+          {
+            "regra": "datas.pagamento_apos_com",
+            "resultado": "ok",
+            "severidade": "bloqueante",
+            "detalhe": "pagamento 2026-09-11 > com 2026-06-19"
+          },
+          {
+            "regra": "datas.pagamento_apos_ex",
+            "resultado": "ok",
+            "severidade": "revisao",
+            "detalhe": "pagamento 2026-09-11 >= ex 2026-06-22"
+          }
+        ]
+      }
+    },
+    {
+      "ferramenta": "check_gross_net",
+      "argumentos": {
+        "valor_bruto": "0.0921500000",
+        "aliquota_ir": "17.5",
+        "valor_liquido": "0.0760237500"
+      },
+      "resultado": {
+        "regra": "valores.bruto_liquido_ir",
+        "resultado": "ok",
+        "severidade": "bloqueante",
+        "detalhe": "0.0921500000 × (1 − 0.175) = 0.07602375; informado 0.0760237500"
+      }
+    },
+    {
+      "ferramenta": "verificar_trecho",
+      "argumentos": {
+        "trecho": "Valor bruto por ação ON R$ 0,0921500000"
+      },
+      "resultado": {
+        "encontrado": true,
+        "linha": 28
+      }
+    },
+    {
+      "ferramenta": "verificar_trecho",
+      "argumentos": {
+        "trecho": "Valor líquido por ação ON R$ 0,0760237500"
+      },
+      "resultado": {
+        "encontrado": true,
+        "linha": 33
+      }
+    },
+    {
+      "ferramenta": "verificar_trecho",
+      "argumentos": {
+        "trecho": "Data de pagamento       11/09/2026"
+      },
+      "resultado": {
+        "encontrado": true,
+        "linha": 38
+      }
+    },
+    {
+      "ferramenta": "verificar_trecho",
+      "argumentos": {
+        "trecho": "Código de negociação    CSPR3 (ISIN BRCSPRACNOR1)"
+      },
+      "resultado": {
+        "encontrado": true,
+        "linha": 39
+      }
+    },
+    {
+      "ferramenta": "verificar_trecho",
+      "argumentos": {
+        "trecho": "Curitiba (PR), 05 de junho de 2026."
+      },
+      "resultado": {
+        "encontrado": true,
+        "linha": 42
+      }
+    }
+  ],
+  "extracao": {
+    "identificacao": {
+      "emissor": {
+        "valor": "Companhia Siderúrgica Paranaense S.A.",
+        "trecho": "COMPANHIA   SIDERÚRGICA  PARANAENSE   S.A.",
+        "pagina": null
+      },
+      "cnpj": {
+        "valor": "76.543.210/0001-12",
+        "trecho": "CNPJ/ME nº 76.543.210/0001-12",
+        "pagina": null
+      },
+      "isin": {
+        "valor": "BRCSPRACNOR1",
+        "trecho": "Código de negociação    CSPR3 (ISIN BRCSPRACNOR1)",
+        "pagina": null
+      },
+      "ticker": {
+        "valor": "CSPR3",
+        "trecho": "Código de negociação    CSPR3 (ISIN BRCSPRACNOR1)",
+        "pagina": null
+      },
+      "classe_acao": {
+        "valor": "ON",
+        "trecho": "Valor bruto por ação ON R$ 0,0921500000",
+        "pagina": null
+      }
+    },
+    "data_documento": {
+      "valor": "2026-06-05",
+      "trecho": "Curitiba (PR), 05 de junho de 2026.",
+      "pagina": null
+    },
+    "eventos": [
+      {
+        "tipo_evento": "jcp",
+        "justificativa_tipo": "O título diz 'Distribuição de Dividendos', mas o corpo do aviso trata de 'remuneração do capital próprio', limitada à variação pro rata die da TJLP, com IRRF de 17,5% e valor líquido por ação. A natureza do provento na tabela é 'Remuneração do capital próprio'. Isso é JCP. A imputação ao dividendo mínimo obrigatório não o torna dividendo.",
+        "rotulo_documento": {
+          "valor": "AVISO AOS ACIONISTAS — Distribuição de Dividendos",
+          "trecho": "AVISO AOS ACIONISTAS — Distribuição de Dividendos",
+          "pagina": null
+        },
+        "data_aprovacao": {
+          "valor": "2026-06-05",
+          "trecho": "em reunião de 05 de junho de 2026, que aprovou a distribuição de proventos",
+          "pagina": null
+        },
+        "data_com": {
+          "valor": "2026-06-19",
+          "trecho": "Data-base (“data com”)  19/06/2026",
+          "pagina": null
+        },
+        "data_ex": {
+          "valor": "2026-06-22",
+          "trecho": "Data “ex”               22/06/2026",
+          "pagina": null
+        },
+        "data_pagamento": {
+          "valor": "2026-09-11",
+          "trecho": "Data de pagamento       11/09/2026",
+          "pagina": null
+        },
+        "moeda": {
+          "valor": "BRL",
+          "trecho": "Valor bruto por ação ON R$ 0,0921500000",
+          "pagina": null
+        },
+        "valor_bruto": {
+          "valor": "0.0921500000",
+          "trecho": "Valor bruto por ação ON R$ 0,0921500000",
+          "pagina": null
+        },
+        "aliquota_ir": {
+          "valor": "17.5",
+          "trecho": "retenção de Imposto de Renda na Fonte à alíquota de 17,5%",
+          "pagina": null
+        },
+        "valor_liquido": {
+          "valor": "0.0760237500",
+          "trecho": "Valor líquido por ação ON R$ 0,0760237500",
+          "pagina": null
+        },
+        "proporcao": {
+          "valor": null,
+          "trecho": null,
+          "pagina": null
+        },
+        "percentual_bonificacao": {
+          "valor": null,
+          "trecho": null,
+          "pagina": null
+        },
+        "custo_atribuido": {
+          "valor": null,
+          "trecho": null,
+          "pagina": null
+        },
+        "observacoes": []
+      }
+    ],
+    "transcricao": null
+  }
+}

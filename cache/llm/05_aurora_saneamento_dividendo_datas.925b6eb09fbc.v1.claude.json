@@ -1,0 +1,299 @@
+{
+  "arquivo": "05_aurora_saneamento_dividendo_datas.pdf",
+  "sha256": "925b6eb09fbcaecf81d3c1d125e041edd1460fed23d6a67bf10f8a6b170e9567",
+  "prompt_versao": "v1",
+  "provider": "claude",
+  "modelo": "claude-sonnet-5-5",
+  "processado_em": "2026-10-21T22:41:42",
+  "chamadas_ferramentas": [
+    {
+      "ferramenta": "lookup_golden_record",
+      "argumentos": {
+        "isin": "BRAURSACNOR4",
+        "ticker": "AURS3",
+        "cnpj": "22.333.444/0001-77",
+        "emissor": "Aurora Saneamento S.A."
+      },
+      "resultado": {
+        "status": "ok",
+        "registro": {
+          "emissor": "Aurora Saneamento S.A.",
+          "cnpj": "22.333.444/0001-77",
+          "isin": "BRAURSACNOR4",
+          "ticker": "AURS3",
+          "classe": "ON",
+          "segmento_listagem": "Novo Mercado",
+          "status": "ativo"
+        },
+        "chaves_encontradas": [
+          "cnpj",
+          "emissor",
+          "isin",
+          "ticker"
+        ],
+        "chaves_nao_encontradas": [],
+        "isin_por_chave": {
+          "isin": "BRAURSACNOR4",
+          "ticker": "BRAURSACNOR4",
+          "cnpj": "BRAURSACNOR4",
+          "emissor": "BRAURSACNOR4"
+        },
+        "isin_digito_verificador_ok": false,
+        "classe_pelo_ticker": "ON"
+      }
+    },
+    {
+      "ferramenta": "validate_dates",
+      "argumentos": {
+        "tipo_evento": "dividendo",
+        "data_aprovacao": "2026-06-01",
+        "data_com": "2026-07-15",
+        "data_ex": "2026-07-16",
+        "data_pagamento": "2026-07-10",
+        "data_documento": "2026-06-01"
+      },
+      "resultado": {
+        "resultado": [
+          {
+            "regra": "datas.com_dia_util",
+            "resultado": "ok",
+            "severidade": "revisao",
+            "detalhe": "data com 2026-07-15 (Wed)"
+          },
+          {
+            "regra": "datas.com_antes_ex",
+            "resultado": "ok",
+            "severidade": "bloqueante",
+            "detalhe": "com 2026-07-15 < ex 2026-07-16"
+          },
+          {
+            "regra": "datas.ex_proximo_dia_util",
+            "resultado": "ok",
+            "severidade": "revisao",
+            "detalhe": "esperado 2026-07-16, informado 2026-07-16"
+          },
+          {
+            "regra": "datas.aprovacao_ate_com",
+            "resultado": "ok",
+            "severidade": "bloqueante",
+            "detalhe": "aprovação 2026-06-01 <= com 2026-07-15"
+          },
+          {
+            "regra": "datas.aprovacao_ate_documento",
+            "resultado": "ok",
+            "severidade": "revisao",
+            "detalhe": "aprovação 2026-06-01 <= documento 2026-06-01"
+          },
+          {
+            "regra": "datas.pagamento_apos_com",
+            "resultado": "falha",
+            "severidade": "bloqueante",
+            "detalhe": "pagamento 2026-07-10 > com 2026-07-15"
+          },
+          {
+            "regra": "datas.pagamento_apos_ex",
+            "resultado": "falha",
+            "severidade": "revisao",
+            "detalhe": "pagamento 2026-07-10 >= ex 2026-07-16"
+          }
+        ]
+      }
+    },
+    {
+      "ferramenta": "verificar_trecho",
+      "argumentos": {
+        "trecho": "Valor bruto por ação ON R$ 0,3100000000"
+      },
+      "resultado": {
+        "encontrado": true,
+        "linha": 24
+      }
+    },
+    {
+      "ferramenta": "verificar_trecho",
+      "argumentos": {
+        "trecho": "Data de pagamento       10/07/2026"
+      },
+      "resultado": {
+        "encontrado": true,
+        "linha": 30
+      }
+    },
+    {
+      "ferramenta": "verificar_trecho",
+      "argumentos": {
+        "trecho": "Data-base (“data com”)  15/07/2026"
+      },
+      "resultado": {
+        "encontrado": true,
+        "linha": 27
+      }
+    },
+    {
+      "ferramenta": "verificar_trecho",
+      "argumentos": {
+        "trecho": "Data “ex-dividendos”    16/07/2026"
+      },
+      "resultado": {
+        "encontrado": true,
+        "linha": 29
+      }
+    },
+    {
+      "ferramenta": "verificar_trecho",
+      "argumentos": {
+        "trecho": "Data de aprovação (RCA) 01/06/2026"
+      },
+      "resultado": {
+        "encontrado": true,
+        "linha": 25
+      }
+    },
+    {
+      "ferramenta": "verificar_trecho",
+      "argumentos": {
+        "trecho": "Código de negociação    AURS3 (ISIN BRAURSACNOR4)"
+      },
+      "resultado": {
+        "encontrado": true,
+        "linha": 32
+      }
+    },
+    {
+      "ferramenta": "verificar_trecho",
+      "argumentos": {
+        "trecho": "Belo Horizonte (MG), 01 de junho de 2026."
+      },
+      "resultado": {
+        "encontrado": true,
+        "linha": 35
+      }
+    },
+    {
+      "ferramenta": "verificar_trecho",
+      "argumentos": {
+        "trecho": "CNPJ/ME nº 22.333.444/0001-77"
+      },
+      "resultado": {
+        "encontrado": true,
+        "linha": 7
+      }
+    },
+    {
+      "ferramenta": "verificar_trecho",
+      "argumentos": {
+        "trecho": "AVISO AOS ACIONISTAS — Pagamento de Dividendos Intercalares"
+      },
+      "resultado": {
+        "encontrado": true,
+        "linha": 11
+      }
+    }
+  ],
+  "extracao": {
+    "identificacao": {
+      "emissor": {
+        "valor": "Aurora Saneamento S.A.",
+        "trecho": "AURORA  SANEAMENTO   S.A.",
+        "pagina": null
+      },
+      "cnpj": {
+        "valor": "22.333.444/0001-77",
+        "trecho": "CNPJ/ME nº 22.333.444/0001-77",
+        "pagina": null
+      },
+      "isin": {
+        "valor": "BRAURSACNOR4",
+        "trecho": "Código de negociação    AURS3 (ISIN BRAURSACNOR4)",
+        "pagina": null
+      },
+      "ticker": {
+        "valor": "AURS3",
+        "trecho": "Código de negociação    AURS3 (ISIN BRAURSACNOR4)",
+        "pagina": null
+      },
+      "classe_acao": {
+        "valor": "ON",
+        "trecho": "Valor bruto por ação ON R$ 0,3100000000",
+        "pagina": null
+      }
+    },
+    "data_documento": {
+      "valor": "2026-06-01",
+      "trecho": "Belo Horizonte (MG), 01 de junho de 2026.",
+      "pagina": null
+    },
+    "eventos": [
+      {
+        "tipo_evento": "dividendo",
+        "justificativa_tipo": "O aviso trata de dividendos intercalares à conta de reservas de lucros, sem menção a capital próprio, IRRF ou valor líquido por ação. Classificado como dividendo.",
+        "rotulo_documento": {
+          "valor": "AVISO AOS ACIONISTAS — Pagamento de Dividendos Intercalares",
+          "trecho": "AVISO AOS ACIONISTAS — Pagamento de Dividendos Intercalares",
+          "pagina": null
+        },
+        "data_aprovacao": {
+          "valor": "2026-06-01",
+          "trecho": "Data de aprovação (RCA) 01/06/2026",
+          "pagina": null
+        },
+        "data_com": {
+          "valor": "2026-07-15",
+          "trecho": "Data-base (“data com”)  15/07/2026",
+          "pagina": null
+        },
+        "data_ex": {
+          "valor": "2026-07-16",
+          "trecho": "Data “ex-dividendos”    16/07/2026",
+          "pagina": null
+        },
+        "data_pagamento": {
+          "valor": "2026-07-10",
+          "trecho": "Data de pagamento       10/07/2026",
+          "pagina": null
+        },
+        "moeda": {
+          "valor": "BRL",
+          "trecho": "Valor bruto por ação ON R$ 0,3100000000",
+          "pagina": null
+        },
+        "valor_bruto": {
+          "valor": "0.3100000000",
+          "trecho": "Valor bruto por ação ON R$ 0,3100000000",
+          "pagina": null
+        },
+        "aliquota_ir": {
+          "valor": null,
+          "trecho": null,
+          "pagina": null
+        },
+        "valor_liquido": {
+          "valor": null,
+          "trecho": null,
+          "pagina": null
+        },
+        "proporcao": {
+          "valor": null,
+          "trecho": null,
+          "pagina": null
+        },
+        "percentual_bonificacao": {
+          "valor": null,
+          "trecho": null,
+          "pagina": null
+        },
+        "custo_atribuido": {
+          "valor": null,
+          "trecho": null,
+          "pagina": null
+        },
+        "observacoes": [
+          "INCOERÊNCIA NO DOCUMENTO: a data de pagamento (10/07/2026) é anterior à data com (15/07/2026) e à data ex (16/07/2026). Valores extraídos como escritos, sem correção; requer revisão manual/confirmação com o emissor antes de creditar.",
+          "O aviso não informa alíquota de IR nem valor líquido por ação; campos ficam null. Não foi informada a regra de retenção de 10% acima de R$ 50 mil/mês.",
+          "A ferramenta de lookup encontrou o registro (todas as chaves consistentes), mas sinalizou isin_digito_verificador_ok = false para BRAURSACNOR4; ISIN mantido como no documento, recomenda-se conferência."
+        ]
+      }
+    ],
+    "transcricao": null
+  }
+}

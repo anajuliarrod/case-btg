@@ -1,0 +1,315 @@
+{
+  "arquivo": "08_construtora_horizonte_bonificacao.pdf",
+  "sha256": "a509637f4b258454309e1d21e81beca56701a78624b8a6a6f9a6b0ec9389b0e5",
+  "prompt_versao": "v1",
+  "provider": "gemini",
+  "modelo": "gemini-3.8-flash",
+  "processado_em": "2026-10-24T23:27:54",
+  "chamadas_ferramentas": [
+    {
+      "ferramenta": "lookup_golden_record",
+      "argumentos": {
+        "isin": "BRCNHZACNOR5",
+        "ticker": "CNHZ3",
+        "cnpj": "09.888.999/0001-21",
+        "emissor": "CONSTRUTORA HORIZONTE S.A."
+      },
+      "resultado": {
+        "status": "nao_encontrado",
+        "registro": null,
+        "chaves_encontradas": [],
+        "chaves_nao_encontradas": [
+          "isin",
+          "ticker",
+          "cnpj",
+          "emissor"
+        ],
+        "isin_por_chave": {},
+        "isin_digito_verificador_ok": false,
+        "classe_pelo_ticker": "ON"
+      }
+    },
+    {
+      "ferramenta": "validate_dates",
+      "argumentos": {
+        "data_com": "2026-06-18",
+        "data_aprovacao": "2026-06-04",
+        "data_ex": "2026-06-19",
+        "tipo_evento": "bonificacao",
+        "data_documento": "2026-06-04",
+        "data_pagamento": "2026-06-26"
+      },
+      "resultado": {
+        "resultado": [
+          {
+            "regra": "datas.com_dia_util",
+            "resultado": "ok",
+            "severidade": "revisao",
+            "detalhe": "data com 2026-06-18 (Thu)"
+          },
+          {
+            "regra": "datas.com_antes_ex",
+            "resultado": "ok",
+            "severidade": "bloqueante",
+            "detalhe": "com 2026-06-18 < ex 2026-06-19"
+          },
+          {
+            "regra": "datas.ex_proximo_dia_util",
+            "resultado": "ok",
+            "severidade": "revisao",
+            "detalhe": "esperado 2026-06-19, informado 2026-06-19"
+          },
+          {
+            "regra": "datas.aprovacao_ate_com",
+            "resultado": "ok",
+            "severidade": "bloqueante",
+            "detalhe": "aprovação 2026-06-04 <= com 2026-06-18"
+          },
+          {
+            "regra": "datas.aprovacao_ate_documento",
+            "resultado": "ok",
+            "severidade": "revisao",
+            "detalhe": "aprovação 2026-06-04 <= documento 2026-06-04"
+          },
+          {
+            "regra": "datas.pagamento_apos_com",
+            "resultado": "ok",
+            "severidade": "bloqueante",
+            "detalhe": "pagamento 2026-06-26 > com 2026-06-18"
+          },
+          {
+            "regra": "datas.pagamento_apos_ex",
+            "resultado": "ok",
+            "severidade": "revisao",
+            "detalhe": "pagamento 2026-06-26 >= ex 2026-06-19"
+          }
+        ]
+      }
+    },
+    {
+      "ferramenta": "verificar_trecho",
+      "argumentos": {
+        "trecho": "CONSTRUTORA   HORIZONTE  S.A."
+      },
+      "resultado": {
+        "encontrado": true,
+        "linha": 6
+      }
+    },
+    {
+      "ferramenta": "verificar_trecho",
+      "argumentos": {
+        "trecho": "CNPJ/ME nº 09.888.999/0001-21"
+      },
+      "resultado": {
+        "encontrado": true,
+        "linha": 7
+      }
+    },
+    {
+      "ferramenta": "verificar_trecho",
+      "argumentos": {
+        "trecho": "AVISO AOS ACIONISTAS — Bonificação em Ações"
+      },
+      "resultado": {
+        "encontrado": true,
+        "linha": 11
+      }
+    },
+    {
+      "ferramenta": "verificar_trecho",
+      "argumentos": {
+        "trecho": "Assembleia Geral Extraordinária de\n         04 de junho de 2026"
+      },
+      "resultado": {
+        "encontrado": true,
+        "linha": 13
+      }
+    },
+    {
+      "ferramenta": "verificar_trecho",
+      "argumentos": {
+        "trecho": "1 (uma) ação nova para cada 20 (vinte) ações"
+      },
+      "resultado": {
+        "encontrado": true,
+        "linha": 17
+      }
+    },
+    {
+      "ferramenta": "verificar_trecho",
+      "argumentos": {
+        "trecho": "Proporção               1 ação nova para cada 20 ações (5%)"
+      },
+      "resultado": {
+        "encontrado": true,
+        "linha": 26
+      }
+    },
+    {
+      "ferramenta": "verificar_trecho",
+      "argumentos": {
+        "trecho": "Custo unitário atribuído às ações bonificadas, para fins fiscais, é de R$ 7,820000 por ação"
+      },
+      "resultado": {
+        "encontrado": true,
+        "linha": 21
+      }
+    },
+    {
+      "ferramenta": "verificar_trecho",
+      "argumentos": {
+        "trecho": "Data-base (“data com”)  18/06/2026"
+      },
+      "resultado": {
+        "encontrado": true,
+        "linha": 29
+      }
+    },
+    {
+      "ferramenta": "verificar_trecho",
+      "argumentos": {
+        "trecho": "Data “ex-bonificação”   19/06/2026"
+      },
+      "resultado": {
+        "encontrado": true,
+        "linha": 31
+      }
+    },
+    {
+      "ferramenta": "verificar_trecho",
+      "argumentos": {
+        "trecho": "Crédito das ações bonificadas 26/06/2026"
+      },
+      "resultado": {
+        "encontrado": true,
+        "linha": 33
+      }
+    },
+    {
+      "ferramenta": "verificar_trecho",
+      "argumentos": {
+        "trecho": "Código de negociação    CNHZ3 (ISIN BRCNHZACNOR5)"
+      },
+      "resultado": {
+        "encontrado": true,
+        "linha": 34
+      }
+    },
+    {
+      "ferramenta": "verificar_trecho",
+      "argumentos": {
+        "trecho": "São Paulo (SP), 04 de junho de 2026."
+      },
+      "resultado": {
+        "encontrado": true,
+        "linha": 37
+      }
+    }
+  ],
+  "extracao": {
+    "identificacao": {
+      "emissor": {
+        "valor": "CONSTRUTORA HORIZONTE S.A.",
+        "trecho": "CONSTRUTORA   HORIZONTE  S.A.",
+        "pagina": 1
+      },
+      "cnpj": {
+        "valor": "09.888.999/0001-21",
+        "trecho": "CNPJ/ME nº 09.888.999/0001-21",
+        "pagina": 1
+      },
+      "isin": {
+        "valor": "BRCNHZACNOR5",
+        "trecho": "ISIN BRCNHZACNOR5",
+        "pagina": 1
+      },
+      "ticker": {
+        "valor": "CNHZ3",
+        "trecho": "Código de negociação    CNHZ3",
+        "pagina": 1
+      },
+      "classe_acao": {
+        "valor": null,
+        "trecho": null,
+        "pagina": null
+      }
+    },
+    "data_documento": {
+      "valor": "2026-06-04",
+      "trecho": "São Paulo (SP), 04 de junho de 2026.",
+      "pagina": 1
+    },
+    "eventos": [
+      {
+        "tipo_evento": "bonificacao",
+        "justificativa_tipo": "Aumento do capital social mediante capitalização de reservas com consequente bonificação em ações aos acionistas, na proporção de 1 nova ação para cada 20 possuídas (5%) e custo unitário atribuído para fins fiscais.",
+        "rotulo_documento": {
+          "valor": "AVISO AOS ACIONISTAS — Bonificação em Ações",
+          "trecho": "AVISO AOS ACIONISTAS — Bonificação em Ações",
+          "pagina": 1
+        },
+        "data_aprovacao": {
+          "valor": "2026-06-04",
+          "trecho": "Assembleia Geral Extraordinária de\n         04 de junho de 2026",
+          "pagina": 1
+        },
+        "data_com": {
+          "valor": "2026-06-18",
+          "trecho": "Data-base (“data com”)  18/06/2026",
+          "pagina": 1
+        },
+        "data_ex": {
+          "valor": "2026-06-19",
+          "trecho": "Data “ex-bonificação”   19/06/2026",
+          "pagina": 1
+        },
+        "data_pagamento": {
+          "valor": "2026-06-26",
+          "trecho": "Crédito das ações bonificadas 26/06/2026",
+          "pagina": 1
+        },
+        "moeda": {
+          "valor": null,
+          "trecho": null,
+          "pagina": null
+        },
+        "valor_bruto": {
+          "valor": null,
+          "trecho": null,
+          "pagina": null
+        },
+        "aliquota_ir": {
+          "valor": null,
+          "trecho": null,
+          "pagina": null
+        },
+        "valor_liquido": {
+          "valor": null,
+          "trecho": null,
+          "pagina": null
+        },
+        "proporcao": {
+          "valor": "1:20",
+          "trecho": "Proporção               1 ação nova para cada 20 ações (5%)",
+          "pagina": 1
+        },
+        "percentual_bonificacao": {
+          "valor": "5",
+          "trecho": "Proporção               1 ação nova para cada 20 ações (5%)",
+          "pagina": 1
+        },
+        "custo_atribuido": {
+          "valor": "7.820000",
+          "trecho": "Custo unitário atribuído às ações bonificadas, para fins fiscais, é de R$ 7,820000 por ação",
+          "pagina": 1
+        },
+        "observacoes": [
+          "As frações resultantes serão alienadas em leilão na B3.",
+          "O dígito verificador do ISIN BRCNHZACNOR5 informado no aviso é inválido conforme cálculo de validação ISIN."
+        ]
+      }
+    ],
+    "transcricao": null
+  }
+}

@@ -1,0 +1,376 @@
+{
+  "documento": {
+    "arquivo": "06_petroquimica_litoral_grupamento.pdf",
+    "sha256": "147d83f038f6ca94495a5d5248f36a6feedee7ae9a5cebc011d40e1f14d68068",
+    "paginas": 1,
+    "fonte": "texto_nativo"
+  },
+  "status": "aprovado",
+  "resumo_operador": "Grupamento PQLT3. Ajuste de quantidade: cada 10 ação(ões) vira(m) 1 (quantidade × 1/10); sem crédito em dinheiro. Data com 26/06/2026, ex 29/06/2026. Aprovado.",
+  "identificacao": {
+    "emissor": {
+      "valor": "PETROQUÍMICA LITORAL S.A.",
+      "unidade": null,
+      "status": "extraido",
+      "confianca": "alta",
+      "motivos": [
+        "trecho localizado no PDF (pág. 1, linha 6)",
+        "confirmado por golden.identificacao"
+      ],
+      "evidencia": {
+        "trecho": "PETROQUÍMICA  LITORAL  S.A.",
+        "pagina": 1,
+        "linha": 6,
+        "verificada": true
+      }
+    },
+    "cnpj": {
+      "valor": "55.666.777/0001-08",
+      "unidade": null,
+      "status": "extraido",
+      "confianca": "alta",
+      "motivos": [
+        "trecho localizado no PDF (pág. 1, linha 7)",
+        "confirmado por golden.identificacao"
+      ],
+      "evidencia": {
+        "trecho": "CNPJ/ME nº 55.666.777/0001-08",
+        "pagina": 1,
+        "linha": 7,
+        "verificada": true
+      }
+    },
+    "isin": {
+      "valor": "BRPQLTACNOR8",
+      "unidade": null,
+      "status": "extraido",
+      "confianca": "alta",
+      "motivos": [
+        "trecho localizado no PDF (pág. 1, linha 37)",
+        "confirmado por golden.identificacao"
+      ],
+      "evidencia": {
+        "trecho": "ISIN BRPQLTACNOR8",
+        "pagina": 1,
+        "linha": 37,
+        "verificada": true
+      }
+    },
+    "ticker": {
+      "valor": "PQLT3",
+      "unidade": null,
+      "status": "extraido",
+      "confianca": "alta",
+      "motivos": [
+        "trecho localizado no PDF (pág. 1, linha 37)",
+        "confirmado por golden.identificacao"
+      ],
+      "evidencia": {
+        "trecho": "Código de negociação    PQLT3",
+        "pagina": 1,
+        "linha": 37,
+        "verificada": true
+      }
+    },
+    "classe_acao": {
+      "valor": "ON",
+      "unidade": null,
+      "status": "extraido",
+      "confianca": "alta",
+      "motivos": [
+        "trecho localizado no PDF (pág. 1, linha 37)",
+        "confirmado por golden.classe"
+      ],
+      "evidencia": {
+        "trecho": "Código de negociação    PQLT3 (ISIN BRPQLTACNOR8)",
+        "pagina": 1,
+        "linha": 37,
+        "verificada": true
+      }
+    }
+  },
+  "data_documento": {
+    "valor": "2026-05-30",
+    "unidade": null,
+    "status": "extraido",
+    "confianca": "alta",
+    "motivos": [
+      "trecho localizado no PDF (pág. 1, linha 40)",
+      "valor aparece 2x no documento (corpo e tabela concordam)"
+    ],
+    "evidencia": {
+      "trecho": "Santos (SP), 30 de maio de 2026.",
+      "pagina": 1,
+      "linha": 40,
+      "verificada": true
+    }
+  },
+  "validacao_golden": {
+    "status": "ok",
+    "registro": {
+      "emissor": "Petroquímica Litoral S.A.",
+      "cnpj": "55.666.777/0001-08",
+      "isin": "BRPQLTACNOR8",
+      "ticker": "PQLT3",
+      "classe": "ON",
+      "segmento_listagem": "Nível 2",
+      "status": "ativo"
+    },
+    "chaves_encontradas": [
+      "cnpj",
+      "emissor",
+      "isin",
+      "ticker"
+    ],
+    "chaves_nao_encontradas": []
+  },
+  "eventos": [
+    {
+      "tipo": {
+        "valor": "grupamento",
+        "unidade": null,
+        "status": "extraido",
+        "confianca": "alta",
+        "motivos": [
+          "LLM: Grupamento da totalidade das ações representativas do capital social na proporção de 10 ações existentes para 1 ação (inplit), sem modificação do valor do capital social."
+        ],
+        "evidencia": null
+      },
+      "rotulo_documento": "AVISO AOS ACIONISTAS — Grupamento de Ações (Inplit)",
+      "efeito": "Ajuste de quantidade: cada 10 ação(ões) vira(m) 1 (quantidade × 1/10); sem crédito em dinheiro",
+      "campos": {
+        "data_aprovacao": {
+          "valor": "2026-05-30",
+          "unidade": null,
+          "status": "extraido",
+          "confianca": "alta",
+          "motivos": [
+            "trecho localizado no PDF (pág. 1, linha 13)",
+            "valor aparece 2x no documento (corpo e tabela concordam)"
+          ],
+          "evidencia": {
+            "trecho": "Assembleia Geral Extraordinária realizada em 30 de maio de 2026",
+            "pagina": 1,
+            "linha": 13,
+            "verificada": true
+          }
+        },
+        "data_com": {
+          "valor": "2026-06-26",
+          "unidade": null,
+          "status": "extraido",
+          "confianca": "alta",
+          "motivos": [
+            "trecho localizado no PDF (pág. 1, linha 32)",
+            "valor aparece 2x no documento (corpo e tabela concordam)",
+            "confirmado por datas.ex_proximo_dia_util"
+          ],
+          "evidencia": {
+            "trecho": "Data-base do grupamento 26/06/2026",
+            "pagina": 1,
+            "linha": 32,
+            "verificada": true
+          }
+        },
+        "data_ex": {
+          "valor": "2026-06-29",
+          "unidade": null,
+          "status": "extraido",
+          "confianca": "alta",
+          "motivos": [
+            "trecho localizado no PDF (pág. 1, linha 34)",
+            "valor aparece 4x no documento (corpo e tabela concordam)",
+            "confirmado por datas.ex_proximo_dia_util"
+          ],
+          "evidencia": {
+            "trecho": "Início da negociação grupada 29/06/2026",
+            "pagina": 1,
+            "linha": 34,
+            "verificada": true
+          }
+        },
+        "data_pagamento": {
+          "valor": null,
+          "unidade": null,
+          "status": "nao_aplicavel",
+          "confianca": null,
+          "motivos": [],
+          "evidencia": null
+        },
+        "moeda": {
+          "valor": null,
+          "unidade": null,
+          "status": "nao_aplicavel",
+          "confianca": null,
+          "motivos": [],
+          "evidencia": null
+        },
+        "valor_bruto": {
+          "valor": null,
+          "unidade": null,
+          "status": "nao_aplicavel",
+          "confianca": null,
+          "motivos": [],
+          "evidencia": null
+        },
+        "aliquota_ir": {
+          "valor": null,
+          "unidade": null,
+          "status": "nao_aplicavel",
+          "confianca": null,
+          "motivos": [],
+          "evidencia": null
+        },
+        "valor_liquido": {
+          "valor": null,
+          "unidade": null,
+          "status": "nao_aplicavel",
+          "confianca": null,
+          "motivos": [],
+          "evidencia": null
+        },
+        "proporcao": {
+          "valor": "10:1",
+          "unidade": "antes:depois",
+          "status": "extraido",
+          "confianca": "alta",
+          "motivos": [
+            "trecho localizado no PDF (pág. 1, linha 31)"
+          ],
+          "evidencia": {
+            "trecho": "Proporção               10:1 (dez para uma)",
+            "pagina": 1,
+            "linha": 31,
+            "verificada": true
+          }
+        },
+        "percentual_bonificacao": {
+          "valor": null,
+          "unidade": null,
+          "status": "nao_aplicavel",
+          "confianca": null,
+          "motivos": [],
+          "evidencia": null
+        },
+        "custo_atribuido": {
+          "valor": null,
+          "unidade": null,
+          "status": "nao_aplicavel",
+          "confianca": null,
+          "motivos": [],
+          "evidencia": null
+        }
+      },
+      "observacoes": [
+        "Período de ajuste de frações de 29/06/2026 a 28/07/2026.",
+        "As frações remanescentes após o período serão separadas, agrupadas em números inteiros e alienadas em leilão na B3, sendo o produto rateado proporcionalmente entre os titulares."
+      ]
+    }
+  ],
+  "revisao_humana": [],
+  "pendencias": [],
+  "verificacoes": [
+    {
+      "regra": "golden.identificacao",
+      "resultado": "ok",
+      "severidade": "bloqueante",
+      "detalhe": "cnpj, emissor, isin, ticker apontam para BRPQLTACNOR8",
+      "campos": [
+        "identificacao.isin",
+        "identificacao.ticker",
+        "identificacao.cnpj",
+        "identificacao.emissor"
+      ]
+    },
+    {
+      "regra": "golden.classe",
+      "resultado": "ok",
+      "severidade": "revisao",
+      "detalhe": "documento ON, base ON",
+      "campos": [
+        "identificacao.classe_acao"
+      ]
+    },
+    {
+      "regra": "isin.digito_verificador",
+      "resultado": "falha",
+      "severidade": "info",
+      "detalhe": "dígito verificador ISO 6166 não confere (esperado no lote sintético)",
+      "campos": []
+    },
+    {
+      "regra": "datas.com_dia_util",
+      "resultado": "ok",
+      "severidade": "revisao",
+      "detalhe": "data com 2026-06-26 (Fri)",
+      "campos": [
+        "eventos[0].data_com"
+      ]
+    },
+    {
+      "regra": "datas.com_antes_ex",
+      "resultado": "ok",
+      "severidade": "bloqueante",
+      "detalhe": "com 2026-06-26 < ex 2026-06-29",
+      "campos": [
+        "eventos[0].data_com",
+        "eventos[0].data_ex"
+      ]
+    },
+    {
+      "regra": "datas.ex_proximo_dia_util",
+      "resultado": "ok",
+      "severidade": "revisao",
+      "detalhe": "esperado 2026-06-29, informado 2026-06-29",
+      "campos": [
+        "eventos[0].data_com",
+        "eventos[0].data_ex"
+      ]
+    },
+    {
+      "regra": "datas.aprovacao_ate_com",
+      "resultado": "ok",
+      "severidade": "bloqueante",
+      "detalhe": "aprovação 2026-05-30 <= com 2026-06-26",
+      "campos": [
+        "eventos[0].data_aprovacao",
+        "eventos[0].data_com"
+      ]
+    },
+    {
+      "regra": "datas.aprovacao_ate_documento",
+      "resultado": "ok",
+      "severidade": "revisao",
+      "detalhe": "aprovação 2026-05-30 <= documento 2026-05-30",
+      "campos": [
+        "eventos[0].data_aprovacao",
+        "data_documento"
+      ]
+    },
+    {
+      "regra": "classificacao.proporcao_vs_tipo",
+      "resultado": "ok",
+      "severidade": "bloqueante",
+      "detalhe": "grupamento com proporção 10:1",
+      "campos": [
+        "eventos[0].proporcao",
+        "eventos[0].tipo"
+      ]
+    },
+    {
+      "regra": "classificacao.palavras_chave",
+      "resultado": "ok",
+      "severidade": "bloqueante",
+      "detalhe": "LLM: grupamento; regras por palavra-chave: grupamento",
+      "campos": [
+        "eventos[0].tipo"
+      ]
+    }
+  ],
+  "auditoria": {
+    "modelo": "gemini/gemini-3.8-flash",
+    "prompt_versao": "v1",
+    "processado_em": "2026-10-24T23:23:34",
+    "resposta_llm_cache": "cache/llm/06_petroquimica_litoral_grupamento.147d83f038f6.v1.gemini.json"
+  }
+}

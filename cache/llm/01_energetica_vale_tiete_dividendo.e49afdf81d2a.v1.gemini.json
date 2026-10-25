@@ -1,0 +1,327 @@
+{
+  "arquivo": "01_energetica_vale_tiete_dividendo.pdf",
+  "sha256": "e49afdf81d2a1e4a74985e78fa0ea3639633cfa19f5dba633a2b545d115153cb",
+  "prompt_versao": "v1",
+  "provider": "gemini",
+  "modelo": "gemini-3.8-flash",
+  "processado_em": "2026-10-24T23:10:25",
+  "chamadas_ferramentas": [
+    {
+      "ferramenta": "lookup_golden_record",
+      "argumentos": {
+        "cnpj": "12.345.678/0001-90",
+        "isin": "BRTIETACNOR3",
+        "ticker": "TIET3",
+        "emissor": "ENERGÉTICA VALE DO TIETÊ S.A."
+      },
+      "resultado": {
+        "status": "ok",
+        "registro": {
+          "emissor": "Energética Vale do Tietê S.A.",
+          "cnpj": "12.345.678/0001-90",
+          "isin": "BRTIETACNOR3",
+          "ticker": "TIET3",
+          "classe": "ON",
+          "segmento_listagem": "Novo Mercado",
+          "status": "ativo"
+        },
+        "chaves_encontradas": [
+          "cnpj",
+          "emissor",
+          "isin",
+          "ticker"
+        ],
+        "chaves_nao_encontradas": [],
+        "isin_por_chave": {
+          "isin": "BRTIETACNOR3",
+          "ticker": "BRTIETACNOR3",
+          "cnpj": "BRTIETACNOR3",
+          "emissor": "BRTIETACNOR3"
+        },
+        "isin_digito_verificador_ok": false,
+        "classe_pelo_ticker": "ON"
+      }
+    },
+    {
+      "ferramenta": "validate_dates",
+      "argumentos": {
+        "data_documento": "2026-05-28",
+        "data_com": "2026-06-12",
+        "tipo_evento": "dividendo",
+        "data_ex": "2026-06-15",
+        "data_aprovacao": "2026-05-28",
+        "data_pagamento": "2026-07-03"
+      },
+      "resultado": {
+        "resultado": [
+          {
+            "regra": "datas.com_dia_util",
+            "resultado": "ok",
+            "severidade": "revisao",
+            "detalhe": "data com 2026-06-12 (Fri)"
+          },
+          {
+            "regra": "datas.com_antes_ex",
+            "resultado": "ok",
+            "severidade": "bloqueante",
+            "detalhe": "com 2026-06-12 < ex 2026-06-15"
+          },
+          {
+            "regra": "datas.ex_proximo_dia_util",
+            "resultado": "ok",
+            "severidade": "revisao",
+            "detalhe": "esperado 2026-06-15, informado 2026-06-15"
+          },
+          {
+            "regra": "datas.aprovacao_ate_com",
+            "resultado": "ok",
+            "severidade": "bloqueante",
+            "detalhe": "aprovação 2026-05-28 <= com 2026-06-12"
+          },
+          {
+            "regra": "datas.aprovacao_ate_documento",
+            "resultado": "ok",
+            "severidade": "revisao",
+            "detalhe": "aprovação 2026-05-28 <= documento 2026-05-28"
+          },
+          {
+            "regra": "datas.pagamento_apos_com",
+            "resultado": "ok",
+            "severidade": "bloqueante",
+            "detalhe": "pagamento 2026-07-03 > com 2026-06-12"
+          },
+          {
+            "regra": "datas.pagamento_apos_ex",
+            "resultado": "ok",
+            "severidade": "revisao",
+            "detalhe": "pagamento 2026-07-03 >= ex 2026-06-15"
+          }
+        ]
+      }
+    },
+    {
+      "ferramenta": "verificar_trecho",
+      "argumentos": {
+        "trecho": "ENERGÉTICA  VALE  DO TIETÊ S.A."
+      },
+      "resultado": {
+        "encontrado": true,
+        "linha": 6
+      }
+    },
+    {
+      "ferramenta": "verificar_trecho",
+      "argumentos": {
+        "trecho": "CNPJ/ME nº 12.345.678/0001-90"
+      },
+      "resultado": {
+        "encontrado": true,
+        "linha": 7
+      }
+    },
+    {
+      "ferramenta": "verificar_trecho",
+      "argumentos": {
+        "trecho": "AVISO AOS ACIONISTAS — Pagamento de Dividendos"
+      },
+      "resultado": {
+        "encontrado": true,
+        "linha": 11
+      }
+    },
+    {
+      "ferramenta": "verificar_trecho",
+      "argumentos": {
+        "trecho": "Tipo de evento          Dividendo"
+      },
+      "resultado": {
+        "encontrado": true,
+        "linha": 27
+      }
+    },
+    {
+      "ferramenta": "verificar_trecho",
+      "argumentos": {
+        "trecho": "Valor bruto por ação ordinária R$ 0,4275000000"
+      },
+      "resultado": {
+        "encontrado": true,
+        "linha": 28
+      }
+    },
+    {
+      "ferramenta": "verificar_trecho",
+      "argumentos": {
+        "trecho": "Data de aprovação (RCA) 28/05/2026"
+      },
+      "resultado": {
+        "encontrado": true,
+        "linha": 31
+      }
+    },
+    {
+      "ferramenta": "verificar_trecho",
+      "argumentos": {
+        "trecho": "Data-base (“data com”)  12/06/2026"
+      },
+      "resultado": {
+        "encontrado": true,
+        "linha": 33
+      }
+    },
+    {
+      "ferramenta": "verificar_trecho",
+      "argumentos": {
+        "trecho": "Data “ex-dividendos”    15/06/2026"
+      },
+      "resultado": {
+        "encontrado": true,
+        "linha": 34
+      }
+    },
+    {
+      "ferramenta": "verificar_trecho",
+      "argumentos": {
+        "trecho": "Data de pagamento       03/07/2026"
+      },
+      "resultado": {
+        "encontrado": true,
+        "linha": 36
+      }
+    },
+    {
+      "ferramenta": "verificar_trecho",
+      "argumentos": {
+        "trecho": "Código de negociação    TIET3 (ISIN BRTIETACNOR3)"
+      },
+      "resultado": {
+        "encontrado": true,
+        "linha": 38
+      }
+    },
+    {
+      "ferramenta": "verificar_trecho",
+      "argumentos": {
+        "trecho": "São Paulo (SP), 28 de maio de 2026."
+      },
+      "resultado": {
+        "encontrado": true,
+        "linha": 40
+      }
+    },
+    {
+      "ferramenta": "verificar_trecho",
+      "argumentos": {
+        "trecho": "Nos termos da legislação tributária vigente a partir de 1º de janeiro de 2026, os dividendos estarão\n         sujeitos à retenção de Imposto de Renda na Fonte (IRRF) à alíquota de 10% sobre a parcela que exceder\n                                                                                  \n         R$ 50.000,00 mensais por beneficiário pagos por esta Companhia."
+      },
+      "resultado": {
+        "encontrado": true,
+        "linha": 22
+      }
+    }
+  ],
+  "extracao": {
+    "identificacao": {
+      "emissor": {
+        "valor": "ENERGÉTICA VALE DO TIETÊ S.A.",
+        "trecho": "ENERGÉTICA  VALE  DO TIETÊ S.A.",
+        "pagina": 1
+      },
+      "cnpj": {
+        "valor": "12.345.678/0001-90",
+        "trecho": "CNPJ/ME nº 12.345.678/0001-90",
+        "pagina": 1
+      },
+      "isin": {
+        "valor": "BRTIETACNOR3",
+        "trecho": "Código de negociação    TIET3 (ISIN BRTIETACNOR3)",
+        "pagina": 1
+      },
+      "ticker": {
+        "valor": "TIET3",
+        "trecho": "Código de negociação    TIET3 (ISIN BRTIETACNOR3)",
+        "pagina": 1
+      },
+      "classe_acao": {
+        "valor": "ON",
+        "trecho": "Valor bruto por ação ordinária R$ 0,4275000000\n                                                                                  \n         (ON)",
+        "pagina": 1
+      }
+    },
+    "data_documento": {
+      "valor": "2026-05-28",
+      "trecho": "São Paulo (SP), 28 de maio de 2026.",
+      "pagina": 1
+    },
+    "eventos": [
+      {
+        "tipo_evento": "dividendo",
+        "justificativa_tipo": "O documento comunica explicitamente a aprovação e distribuição de dividendos referentes ao resultado do exercício social encerrado em 31 de dezembro de 2025, sem retenção uniforme de IRRF por ação.",
+        "rotulo_documento": {
+          "valor": "AVISO AOS ACIONISTAS — Pagamento de Dividendos",
+          "trecho": "AVISO AOS ACIONISTAS — Pagamento de Dividendos",
+          "pagina": 1
+        },
+        "data_aprovacao": {
+          "valor": "2026-05-28",
+          "trecho": "Data de aprovação (RCA) 28/05/2026",
+          "pagina": 1
+        },
+        "data_com": {
+          "valor": "2026-06-12",
+          "trecho": "Data-base (“data com”)  12/06/2026",
+          "pagina": 1
+        },
+        "data_ex": {
+          "valor": "2026-06-15",
+          "trecho": "Data “ex-dividendos”    15/06/2026",
+          "pagina": 1
+        },
+        "data_pagamento": {
+          "valor": "2026-07-03",
+          "trecho": "Data de pagamento       03/07/2026",
+          "pagina": 1
+        },
+        "moeda": {
+          "valor": "BRL",
+          "trecho": "Valor bruto por ação ordinária R$ 0,4275000000",
+          "pagina": 1
+        },
+        "valor_bruto": {
+          "valor": "0.4275000000",
+          "trecho": "Valor bruto por ação ordinária R$ 0,4275000000",
+          "pagina": 1
+        },
+        "aliquota_ir": {
+          "valor": null,
+          "trecho": null,
+          "pagina": null
+        },
+        "valor_liquido": {
+          "valor": null,
+          "trecho": null,
+          "pagina": null
+        },
+        "proporcao": {
+          "valor": null,
+          "trecho": null,
+          "pagina": null
+        },
+        "percentual_bonificacao": {
+          "valor": null,
+          "trecho": null,
+          "pagina": null
+        },
+        "custo_atribuido": {
+          "valor": null,
+          "trecho": null,
+          "pagina": null
+        },
+        "observacoes": [
+          "Nos termos da legislação tributária vigente a partir de 1º de janeiro de 2026, os dividendos estarão sujeitos à retenção de Imposto de Renda na Fonte (IRRF) à alíquota de 10% sobre a parcela que exceder R$ 50.000,00 mensais por beneficiário pagos por esta Companhia."
+        ]
+      }
+    ],
+    "transcricao": null
+  }
+}

@@ -1,0 +1,242 @@
+{
+  "arquivo": "06_petroquimica_litoral_grupamento.pdf",
+  "sha256": "147d83f038f6ca94495a5d5248f36a6feedee7ae9a5cebc011d40e1f14d68068",
+  "prompt_versao": "v1",
+  "provider": "claude",
+  "modelo": "claude-sonnet-5-5",
+  "processado_em": "2026-10-21T22:41:58",
+  "chamadas_ferramentas": [
+    {
+      "ferramenta": "lookup_golden_record",
+      "argumentos": {
+        "isin": "BRPQLTACNOR8",
+        "ticker": "PQLT3",
+        "cnpj": "55.666.777/0001-08",
+        "emissor": "Petroquímica Litoral S.A."
+      },
+      "resultado": {
+        "status": "ok",
+        "registro": {
+          "emissor": "Petroquímica Litoral S.A.",
+          "cnpj": "55.666.777/0001-08",
+          "isin": "BRPQLTACNOR8",
+          "ticker": "PQLT3",
+          "classe": "ON",
+          "segmento_listagem": "Nível 2",
+          "status": "ativo"
+        },
+        "chaves_encontradas": [
+          "cnpj",
+          "emissor",
+          "isin",
+          "ticker"
+        ],
+        "chaves_nao_encontradas": [],
+        "isin_por_chave": {
+          "isin": "BRPQLTACNOR8",
+          "ticker": "BRPQLTACNOR8",
+          "cnpj": "BRPQLTACNOR8",
+          "emissor": "BRPQLTACNOR8"
+        },
+        "isin_digito_verificador_ok": false,
+        "classe_pelo_ticker": "ON"
+      }
+    },
+    {
+      "ferramenta": "validate_dates",
+      "argumentos": {
+        "tipo_evento": "grupamento",
+        "data_aprovacao": "2026-05-30",
+        "data_com": "2026-06-26",
+        "data_ex": "2026-06-29",
+        "data_documento": "2026-05-30"
+      },
+      "resultado": {
+        "resultado": [
+          {
+            "regra": "datas.com_dia_util",
+            "resultado": "ok",
+            "severidade": "revisao",
+            "detalhe": "data com 2026-06-26 (Fri)"
+          },
+          {
+            "regra": "datas.com_antes_ex",
+            "resultado": "ok",
+            "severidade": "bloqueante",
+            "detalhe": "com 2026-06-26 < ex 2026-06-29"
+          },
+          {
+            "regra": "datas.ex_proximo_dia_util",
+            "resultado": "ok",
+            "severidade": "revisao",
+            "detalhe": "esperado 2026-06-29, informado 2026-06-29"
+          },
+          {
+            "regra": "datas.aprovacao_ate_com",
+            "resultado": "ok",
+            "severidade": "bloqueante",
+            "detalhe": "aprovação 2026-05-30 <= com 2026-06-26"
+          },
+          {
+            "regra": "datas.aprovacao_ate_documento",
+            "resultado": "ok",
+            "severidade": "revisao",
+            "detalhe": "aprovação 2026-05-30 <= documento 2026-05-30"
+          }
+        ]
+      }
+    },
+    {
+      "ferramenta": "verificar_trecho",
+      "argumentos": {
+        "trecho": "Data-base do grupamento 26/06/2026"
+      },
+      "resultado": {
+        "encontrado": true,
+        "linha": 32
+      }
+    },
+    {
+      "ferramenta": "verificar_trecho",
+      "argumentos": {
+        "trecho": "Início da negociação grupada 29/06/2026"
+      },
+      "resultado": {
+        "encontrado": true,
+        "linha": 34
+      }
+    },
+    {
+      "ferramenta": "verificar_trecho",
+      "argumentos": {
+        "trecho": "Proporção               10:1 (dez para uma)"
+      },
+      "resultado": {
+        "encontrado": true,
+        "linha": 31
+      }
+    },
+    {
+      "ferramenta": "verificar_trecho",
+      "argumentos": {
+        "trecho": "Santos (SP), 30 de maio de 2026."
+      },
+      "resultado": {
+        "encontrado": true,
+        "linha": 40
+      }
+    },
+    {
+      "ferramenta": "verificar_trecho",
+      "argumentos": {
+        "trecho": "realizada em 30 de maio de 2026 aprovou o grupamento"
+      },
+      "resultado": {
+        "encontrado": true,
+        "linha": 14
+      }
+    }
+  ],
+  "extracao": {
+    "identificacao": {
+      "emissor": {
+        "valor": "Petroquímica Litoral S.A.",
+        "trecho": "PETROQUÍMICA  LITORAL  S.A.",
+        "pagina": null
+      },
+      "cnpj": {
+        "valor": "55.666.777/0001-08",
+        "trecho": "CNPJ/ME nº 55.666.777/0001-08",
+        "pagina": null
+      },
+      "isin": {
+        "valor": "BRPQLTACNOR8",
+        "trecho": "PQLT3 (ISIN BRPQLTACNOR8)",
+        "pagina": null
+      },
+      "ticker": {
+        "valor": "PQLT3",
+        "trecho": "Código de negociação    PQLT3 (ISIN BRPQLTACNOR8)",
+        "pagina": null
+      },
+      "classe_acao": {
+        "valor": "ON",
+        "trecho": "Código de negociação    PQLT3 (ISIN BRPQLTACNOR8)",
+        "pagina": null
+      }
+    },
+    "data_documento": {
+      "valor": "2026-05-30",
+      "trecho": "Santos (SP), 30 de maio de 2026.",
+      "pagina": null
+    },
+    "eventos": [
+      {
+        "tipo_evento": "grupamento",
+        "justificativa_tipo": "Título e conteúdo indicam grupamento (inplit): 10 ações existentes passam a 1 ação, sem valor em dinheiro, com período de ajuste de frações.",
+        "rotulo_documento": {
+          "valor": "AVISO AOS ACIONISTAS — Grupamento de Ações (Inplit)",
+          "trecho": "AVISO AOS ACIONISTAS — Grupamento de Ações (Inplit)",
+          "pagina": null
+        },
+        "data_aprovacao": {
+          "valor": "2026-05-30",
+          "trecho": "realizada em 30 de maio de 2026 aprovou o grupamento",
+          "pagina": null
+        },
+        "data_com": {
+          "valor": "2026-06-26",
+          "trecho": "Data-base do grupamento 26/06/2026",
+          "pagina": null
+        },
+        "data_ex": {
+          "valor": "2026-06-29",
+          "trecho": "Início da negociação grupada 29/06/2026",
+          "pagina": null
+        },
+        "data_pagamento": {
+          "valor": null,
+          "trecho": null,
+          "pagina": null
+        },
+        "moeda": {
+          "valor": null,
+          "trecho": null,
+          "pagina": null
+        },
+        "valor_bruto": {
+          "valor": null,
+          "trecho": null,
+          "pagina": null
+        },
+        "aliquota_ir": {
+          "valor": null,
+          "trecho": null,
+          "pagina": null
+        },
+        "valor_liquido": {
+          "valor": null,
+          "trecho": null,
+          "pagina": null
+        },
+        "proporcao": {
+          "valor": "10:1",
+          "trecho": "Proporção               10:1 (dez para uma)",
+          "pagina": null
+        },
+        "percentual_bonificacao": {
+          "valor": null,
+          "trecho": null,
+          "pagina": null
+        },
+        "custo_atribuido": {
+          "valor": null,
+          "trecho": null,
+          "pagina": null
+        },
+        "observacoes": []
+      }
+    ],
+    "transcricao": null
+  }
+}
