@@ -4,6 +4,8 @@ Agente code-first que lê avisos aos acionistas (PDF nativo ou escaneado), extra
 
 Saída: um JSON por documento em `Output/records/` e o relatório `Output/exceptions_report.md`.
 
+Entrada: os PDFs do lote ficam em `Input/` (a pasta `documentos/` do enunciado) e a base de referência em `golden_records/`.
+
 ## Como rodar
 
 Requer Python 3.12+ e [uv](https://docs.astral.sh/uv/).

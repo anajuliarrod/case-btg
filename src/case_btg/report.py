@@ -1,6 +1,5 @@
 import json
 from collections import Counter
-from datetime import datetime
 from pathlib import Path
 
 from case_btg.config import OUTPUT_DIR
@@ -31,7 +30,6 @@ def write_report(records: list[Registro], failures: dict[str, str]) -> Path:
     lines = [
         "# Relatório de exceções",
         "",
-        f"Gerado em {datetime.now():%d/%m/%Y %H:%M}. "
         f"{len(records) + len(failures)} documentos: {counts['aprovado']} aprovados, "
         f"{counts['aprovado_com_ressalvas']} com ressalvas, {counts['revisao_humana']} em revisão humana, "
         f"{len(failures)} falhas de processamento.",

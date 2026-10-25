@@ -1,6 +1,6 @@
 # Relatório de exceções
 
-Gerado em 24/10/2026 23:31. 8 documentos: 2 aprovados, 1 com ressalvas, 5 em revisão humana, 0 falhas de processamento.
+8 documentos: 2 aprovados, 1 com ressalvas, 5 em revisão humana, 0 falhas de processamento.
 
 | Documento | Evento | Status | Revisão | Pendências |
 |---|---|---|---|---|
